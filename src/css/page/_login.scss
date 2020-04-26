@@ -1,0 +1,55 @@
+.login {
+    width: calc(100% - 30px);
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 15px;
+    font-size: 16px;
+    h2 {
+        text-align: center;
+        margin: em-spacing(20, 36) auto;
+        display: block;
+        @include font(Arial, em(36), $MerapTextColor);
+        font-weight: bold;
+        line-height: em-spacing(46, 36);
+    }
+    .login__input {
+        max-width: 400px;
+        display: block;
+        margin: 0 auto;
+        text-align: left;
+    }
+    ::-webkit-input-placeholder {
+        color: $MerapGrey;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: $MerapGrey;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: $MerapGrey;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: $MerapGrey;
+    }
+
+    .submit__button--login {
+        margin: 30px auto;
+    }
+    @include resize($SIZE_TO_BLOCK) {
+        font-size: 14px;
+        h2 {
+            font-size: em(30);
+            margin-top: 0px;
+        }
+    }
+    @include resize($PhabletWidth) {
+        font-size: 12px;
+        h2 {
+            font-size: em(24);
+        }
+        .submit__button--login {
+            font-size: 12px;
+            margin: 20px auto;
+            margin-bottom: 10px;
+        }
+    }
+}

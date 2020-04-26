@@ -1,0 +1,216 @@
+
+.quiz {
+    background: url('../images/register-header.jpg') no-repeat;
+    background-size: 100%;
+    width: calc(100% - 230px);
+    border: 0px solid transparent;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 836px;
+    margin: 0px auto;
+    background-color: white;
+    position: relative;
+    padding: 15px em-spacing(100, 16);
+    padding-bottom: 30px;
+
+    @include resize($MobileWidth) {
+        width: calc(100% - 60px);
+        padding: 15px;
+        padding-bottom: 30px;
+    }
+}
+
+.quiz__content {
+    height: auto;
+    overflow: hidden;
+    margin-top: 13%;
+
+    @include resize($MobileWidth) {
+        padding: 15px;
+        height: auto;
+        max-height: none;
+    }
+
+    @include resize($PhabletWidth) {
+        padding: 0px;
+    }
+}
+
+.chat__wrapper {
+    display: block;
+    max-width: 80%;
+    &--res {
+        margin-left: 20%;
+    }
+    @include resize($PhoneWidth) {
+        max-width: 90%;
+    }
+}
+
+.chat__holder, .res__holder {
+    display: block;
+    margin: 16px 0px;
+    font-size: 0px;
+
+    .chat__icon, .chat__content, .res__icon, .res__content {
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
+
+.chat__holder--result {
+    opacity: 0;
+    visibility: hidden;
+    width: 80%;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+    margin: 0px;
+    font-size: 0px;
+
+    .chat__icon, .chat__content, .res__icon, .res__content {
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
+
+.chat__icon {
+    width: 42px;
+    height: auto;
+    background-color: transparent;
+    padding-right: 8px;
+
+    @include resize($PhabletWidth) {
+        width: 32px;
+    }
+}
+
+.chat__content {
+    width: auto;
+    max-width: calc(100% - 86px);
+    padding: 18px;
+
+    background-color: #e4e3e8;
+    border: 0px solid transparent;
+    border-radius: 16px;
+
+    @include font(Arial, 16px, #27253f);
+    line-height: 18px;
+    position: relative;
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        z-index: 0;
+        bottom: 0px;
+        left: -10px;
+        width: 32px;
+        height: 17px;
+        background: url('../images/pointer.png') no-repeat;
+    }
+    @include resize($PhabletWidth) {
+        max-width: calc(100% - 76px);
+    }
+}
+
+#quiz-welcome {
+    span {
+        font-weight: bold;
+    }
+}
+
+#quiz-a, #quiz-b, #quiz-c {
+    font-weight: bold;
+}
+
+.res__holder {
+   text-align: right; 
+   margin-bottom: 0px;
+}
+
+.res__icon {
+    width: 42px;
+    height: auto;
+    background-color: transparent;
+    padding-left: 8px;
+
+    @include resize($PhabletWidth) {
+        width: 32px;
+    }
+}
+
+.res__content {
+    width: auto;
+    max-width: calc(100% - 86px);
+    padding: 18px;
+
+    background-color: #00a64f;
+    border: 0px solid transparent;
+    border-radius: 16px;
+
+    @include font(Arial, 16px, white);
+    line-height: 18px;
+    position: relative;
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        z-index: 0;
+        bottom: 0px;
+        right: -10px;
+        width: 32px;
+        height: 17px;
+        background: url('../images/pointer-green.png') no-repeat;
+    }
+
+    @include resize($PhabletWidth) {
+        max-width: calc(100% - 76px);
+    }
+}
+
+.answer__holder {
+    height: 48px;
+    display: block;
+    margin: 24px 0px;
+    font-size: 0px;
+}
+
+.answer__input {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: calc(100% - 96px);
+    margin-right: 12px;
+    padding: 0px 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+
+    border: 1px solid $MerapGreen;
+    border-radius: 24px;
+}
+
+.send__button {
+    width: 76px;
+    display: inline-block;
+    vertical-align: middle;
+
+    .core {
+        text-align: center;
+        line-height: 48px;
+        padding: 0px em-spacing(24, 16);
+        @include font(Arial, 16px, white);
+    }
+}
+
+.answer__error {
+    display: block;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    margin: 10px auto 0px auto;
+    width: 100%;
+    @include font(Arial, 16px, $MerapRed);
+}

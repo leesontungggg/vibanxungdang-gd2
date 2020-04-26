@@ -1,0 +1,162 @@
+$MenuHeight: 72px;
+$MenuMobileHeight: 60px;
+.video__section {
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding-top: $MenuHeight;
+
+    @include resize($MobileWidth) {
+        font-size: 14px;
+        padding-top: $MenuMobileHeight;
+    }
+
+    @include resize($ShowAsMobile) {
+        & .video__title, & .video__info{
+            display: block;
+        }
+    }
+
+    @include resize($PhabletWidth) {
+        font-size: 12px;
+    }
+
+    @include resize($PhoneWidth) {
+        font-size: 10px;
+    }
+}
+
+.merap-video-thumb{
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    overflow: hidden;
+
+    @include resize($MobileWidth) {
+        font-size: 14px;
+    }
+
+    @include resize($ShowAsMobile) {
+        & .video__title--mobile, & .video__info--mobile{
+            display: none;
+        }
+    }
+
+
+    & #merap-video-player{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+
+    &-svg{
+
+        @include TransitionWithDurationAndEase(0.5s, $EasingQuintOut);
+
+        width: 96px;
+        height: 96px;
+        @include resetAbsolute();
+        @include centerTransformOrigin();
+        @include transform(translate(-50%, -50%));
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+    }
+
+    &-overlay{
+        @include resetAbsolute();
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+    }
+
+    & img{
+        display: block;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        position: relative;
+        top:50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+    }
+}
+
+.video__title {
+    margin: 0px auto;
+    padding-top: em-spacing(30, 48);
+    text-align: center;
+    @include font(TitleBold, em(48), $MerapGreen);
+    line-height: em-spacing(60, 48);
+    display: none;
+    width: 70%;
+
+    @include resize(640px) {
+        width: calc(100% - 80px);
+    }
+
+    @include resize($PhoneWidth) {
+        width: calc(100% - 40px);
+    }
+}
+
+.video__info{
+    margin: $MenuHeight auto 0px auto;
+    text-align: center;
+    @include font(Arial, em(20), $MerapTextColor);
+    line-height: em-spacing(30, 20);
+    width: 70%;
+
+    @include resize($MobileWidth) {
+        margin: $MenuMobileHeight auto 0px auto;
+    }
+
+    @include resize(640px) {
+        width: calc(100% - 80px);
+        font-size: 16px;
+        margin: 30px auto;
+    }
+
+    @include resize($PhoneWidth) {
+        width: calc(100% - 40px);
+    }
+}
+
+.video__title--mobile {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 90px);
+    z-index: 3;
+    text-align: center;
+    @include transform(translate(-50%, -100%));
+    width: 70%;
+
+    @include font(TitleBold, em(48), white);
+    line-height: em-spacing(60, 48);
+}
+.video__info--mobile {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 30px);
+    z-index: 3;
+    text-align: center;
+    @include transform(translate(-50%, 100%));
+    @include font(Arial, em(20), white);
+    line-height: em-spacing(30, 20);
+    width: 70%;
+}
+
+.merap-video-thumb:hover{
+    .merap-video-thumb-svg{
+        @include TransitionWithDurationAndEase(0.5s, $EasingBackOut);
+        @include transform(translate(-50%, -50%) scale(1.1));
+    }
+}

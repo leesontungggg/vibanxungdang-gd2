@@ -1,0 +1,157 @@
+$SIZE_TO_BLOCK: 720px;
+
+.registration {
+    background: url('../images/register-header.jpg') no-repeat;
+    background-size: 100%;
+    width: calc(100% - 230px);
+    border: 0px solid transparent;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 836px;
+    margin: 0px auto;
+    background-color: white;
+    position: relative;
+    padding: 15px em-spacing(100, 16);
+
+    &.deactive:not(.profile) {
+        display: none;
+        opacity: 0;
+    }
+
+    @include resize($MobileWidth) {
+        width: calc(100% - 60px);
+        padding: 15px;
+    }
+}
+
+.profile {
+    font-size: 16px;
+    padding-top: 10.6%;
+    position: relative;
+    min-height: 500px;
+
+    @include resize($MobileWidth) {
+        padding-top: 13%;
+    }
+    @include resize($SIZE_TO_BLOCK) {
+        min-height: 300px;
+    }
+    @include resize($PhoneWidth) {
+        min-height: 250px;
+    }
+}
+
+.registration__tab {
+    display: block;
+    font-size: 16px;
+    margin: 0px;
+    margin-bottom: 15px;
+    padding: 15px;
+    text-align: center;
+    padding-top: 10.6%;;
+
+    @include resize($SIZE_TO_BLOCK) {
+        font-size: 12px;
+        text-align: center;
+    }
+    @include resize($PhabletWidth) {
+        font-size: 10px;
+    }
+    @include resize($PhoneWidth) {
+        font-size: 7px;
+    }
+}
+
+.registration__holder {
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+    &.active {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.vertical__seperator {
+    margin: 0px 30px;
+    padding: 0px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    background-color: $MerapGrey;
+    @include resize($SIZE_TO_BLOCK) {
+        margin: 0px 20px;
+    }
+    @include resize($PhabletWidth) {
+        height: 24px;
+        margin: 0px 8px;
+    }
+    @include resize($PhoneWidth) {
+        margin: 0px 6px;
+    }
+}
+
+.tab__button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+    @include font(TitleBold, em(37), $MerapGrey);
+
+    &:hover, &.active {
+        @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+        color: $MerapGreen;
+    }
+}
+
+.error__message {
+    opacity: 0;
+    text-align: center;
+    margin: 10px auto 0px auto;
+    width: 100%;
+    @include font(Arial, 16px, $MerapRed);
+}
+
+.reminder {
+    text-align: center;
+    padding-top: em-spacing(6, 12);
+    padding-bottom: em-spacing(32, 12);
+    @include font(Arial, 12px, $MerapGreen);
+    &--login {
+        cursor: pointer;
+        font-weight: bold;
+        @include TransitionWithDurationAndEase(0.3s, ease-out);
+        &:hover {
+            color: $MerapYellow;
+            @include TransitionWithDurationAndEase(0.3s, ease-out);
+        }
+    }
+}
+
+.profile__guide {
+    position: absolute;
+    width: 80%;
+    height: auto;
+    left: 50%;
+    top: 55%;
+    @include transform(translate(-50%, -50%));
+    z-index: 1;
+    display: block;
+    text-align: center;
+    &--text {
+        @include font(TitleBold, 52px, $MerapGreen);
+        line-height: em-spacing(66, 52);
+        display: block;
+
+        @include resize($SIZE_TO_BLOCK) {
+            font-size: 32px;
+        }
+        @include resize($PhoneWidth) {
+            font-size: 24px;
+        }
+    }
+}

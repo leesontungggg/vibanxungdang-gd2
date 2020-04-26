@@ -1,0 +1,32 @@
+$MerapGreen: #00a64f;
+$MerapYellow: #ffc107;
+$MerapGrey: #afabab;
+$MerapRed: #a61f23;
+$MerapDarkGrey: #212121;
+$MerapTextColor: #757575;
+
+$GlobalFontSize: 16;
+$MobileWidth: 1000px;
+$MaxWidth: 1440px;
+$PhabletWidth: 520px;
+$PhoneWidth: 420px;
+
+$TotalWidth: 1600px;
+$Mac13: 1366px;
+$Laptop: 1280px;
+$StartResponsive: 1180px;
+$ShowAsMobile: 840px;
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.ui-loader{
+    display: none;
+}
+

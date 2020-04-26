@@ -1,0 +1,46 @@
+.congrate {
+    display: none;
+    
+    background: url('../images/register-header.jpg') no-repeat;
+    background-size: 100%;
+    width: calc(100% - 230px);
+    border: 0px solid transparent;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 836px;
+    margin: 0px auto;
+    background-color: white;
+    position: relative;
+    padding: 15px em-spacing(100, 16);
+
+    @include resize($MobileWidth) {
+        width: calc(100% - 60px);
+        padding: 15px;
+    }
+}
+
+.congrate__content {
+    height: auto;
+    overflow: auto;
+    margin-top: 18%;
+    margin-bottom: 9%;
+
+    @include resize($MobileWidth) {
+        padding: 15px;
+        height: auto;
+        max-height: none;
+    }
+}
+
+.congrate__text {
+    text-align: center;
+    @include font(TitleBold, 36px, $MerapGreen);
+    line-height: em-spacing(40, 36);
+
+    @include resize($SIZE_TO_BLOCK) {
+        font-size: 32px;
+    }
+    @include resize($PhoneWidth) {
+        font-size: 24px;
+    }
+}

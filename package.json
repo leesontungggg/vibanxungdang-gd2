@@ -1,0 +1,26 @@
+{
+  "name": "merap-vbxd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@bitbucket.org:sekefreelance/merap-vbxd-2019.git",
+  "author": "Can Ngo <canngo@kobiton.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-less": "^3.5.0",
+    "gulp-sass": "^4.0.1",
+    "less": "^3.0.4",
+    "node-sass": "^4.9.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-rename": "^1.3.0",
+    "gulp-uglify": "^3.0.0"
+  }
+}

@@ -1,0 +1,51 @@
+.fake__image {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+.info{
+	width: calc(100% - 272px);
+	max-width: 740px;
+	margin: 0px auto;
+	display: block;
+	//padding: em-spacing(88, 16) 0px 0px;
+  padding: 0px;
+ 	text-align: center;
+	font-size: 16px;
+
+	@include resize($Laptop) {
+		width: calc(100% - 136px);
+	}
+
+	@include resize($MobileWidth) {
+		font-size: 14px;
+	}
+
+	@include resize($PhabletWidth) {
+		width: calc(100% - 80px);
+		font-size: 12px;
+	}
+
+	@include resize($PhoneWidth) {
+		width: calc(100% - 30px);
+		font-size: 10px;
+	}
+
+  .info__header {
+    @include font(TitleBold, em(50), $MerapGreen);
+    line-height: em-spacing(60, 50);
+  }
+
+	& .info__content {
+		padding: em-spacing(40, 16) 0px 0px;
+		font-size: em(20);
+    color: #403b3b;
+    line-height: em-spacing(33, 20);
+      & b {
+          font-family: Arial;
+      }
+	}
+}

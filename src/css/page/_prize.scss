@@ -1,0 +1,102 @@
+.prize {
+	display: block;
+	text-align: center;
+	font-size: 16px;
+	margin: 0 auto;
+	padding: em-spacing(72, 16) 0px 0px 0px;
+	width: calc(100% - 240px);
+	max-width: $MaxWidth;
+	@include resize($Laptop) {
+		width: calc(100% - 120px);
+	}
+
+	@include resize($MobileWidth) {
+		padding-top: 60px;
+		font-size: 14px;
+	}
+
+	@include resize($PhabletWidth) {
+		width: calc(100% - 80px);
+		font-size: 12px;
+	}
+
+	@include resize($PhoneWidth) {
+		width: calc(100% - 30px);
+		font-size: 10px;
+	}
+
+	&__header {
+		display: block;
+		width: calc(100% - 40px);
+		//max-width: 726px;
+		padding: 0px 20px;
+		margin: em-spacing(60, 52) auto;
+		margin-top: 0px;
+        @include font(TitleBold, em(42), $MerapGreen);
+        line-height: em-spacing(52, 42);
+		@include resize($MobileWidth) {
+			width: 100%;
+			padding: 0px;
+		}
+	}
+
+    &__content{
+        text-align: center;
+        @include font(Arial, em(20), $MerapTextColor);
+        line-height: em-spacing(30, 20);
+        margin-bottom: em-spacing(40, 20);
+    }
+
+	&__holder{
+		list-style-type: none;
+		font-size: 0px;
+		padding:  0px;
+        padding-bottom: 60px;
+		@include resize($Laptop) {
+            padding-bottom: 40px;
+		}
+
+		@include resize($MobileWidth) {
+            padding-bottom: 30px;
+		}
+
+		@include resize($PhabletWidth) {
+            padding-bottom: 0px;
+		}
+
+	}
+}
+
+.prize__item {
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(16.66% - 16px);
+	margin: 8px;
+	min-width: 160px;
+	font-size: 16px;
+
+	@include resize($MobileWidth) {
+		margin: 16px;
+	}
+
+	@include resize($PhabletWidth) {
+		min-width: auto;
+		margin: 8px;
+		width: calc(50% - 32px);
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		@include TransitionWithDurationAndEase(0.5s, $EasingQuintOut);
+		@include centerTransformOrigin();
+	}
+
+	&:hover{
+		img{
+			@include TransitionWithDurationAndEase(0.5s, $EasingQuintOut);
+			@include transform(scale(1.2, 1.2));
+		}
+	}
+}

@@ -1,0 +1,153 @@
+.TNC {
+	width: calc(100% - 272px);
+	max-width: $MaxWidth;
+	display: block;
+	margin: 160px auto 100px auto;
+	position: relative;
+	font-size: 0px;
+	@include resize($Laptop) {
+		width: calc(100% - 120px);
+		margin-top: 80px;
+	}
+
+	@include resize($MobileWidth) {
+		font-size: 14px;
+		margin-top: 60px;
+	}
+
+	@include resize($PhabletWidth) {
+		width: calc(100% - 80px);
+		font-size: 12px;
+		margin-top: 40px;
+	}
+
+	@include resize($PhoneWidth) {
+		width: calc(100% - 30px);
+		font-size: 10px;
+	}
+}
+
+
+.tnc__image__holder {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    @include resize($ShowAsMobile) {
+        display: none;
+    }
+}
+
+.tnc__image__holder--mobile{
+    width: 100%;
+    display: none;
+    @include resize($ShowAsMobile) {
+        display: block;
+    }
+}
+
+.tnc__image {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.tnc__content {
+	display: inline-block;
+    vertical-align: top;
+	width: calc(60% - 125px);
+    padding-right: 120px;
+	font-size: 16px;
+	@include resize($Laptop) {
+		width: calc(60% - 85px);
+        padding-right: 80px;
+	}
+
+	@include resize($MobileWidth) {
+		width: calc(60% - 65px);
+        padding-right: 60px;
+	}
+
+	@include resize($ShowAsMobile) {
+        display: block;
+		width: calc(100% - 40px);
+        padding-right: 40px;
+	}
+
+	@include resize($PhoneWidth) {
+		width: calc(100% - 30px);
+		font-size: 10px;
+        padding-right: 30px;
+	}
+}
+
+.tnc__section {
+	display: block;
+	font-size: 16px;
+	margin: em-spacing(30, 16) 0px;
+
+	.ec__button, .content__title {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.content__title {
+		line-height: 30px;
+		padding-left: em-spacing(24, 18);
+	}
+
+	.content__text {
+		display: block;
+		margin: em-spacing(24, 16) 0px;
+		padding-left: em-spacing(54, 16);
+		height: 0px;
+		overflow: hidden;
+		a {
+			display: inline-block;
+			cursor: pointer;
+			color: $MerapGreen;
+			text-decoration: none;
+			margin: 0px;
+			padding: 0px;
+			font-weight: bold;
+
+			@include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+			&:hover {
+				@include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+				color: $MerapYellow;
+			}
+		}
+	}
+	
+	@include resize($PhabletWidth) {
+		font-size: 14px;
+		.content__title {
+			padding-left: em-spacing(18, 18);
+		}
+		.content__text {
+			margin: em-spacing(18, 16) 0px;
+		}
+	}
+
+	&.active{
+		& .ec__button::before, .ec__button::after {
+			@include transform(translate(-50%, -50%) rotate(0deg));
+		}
+		& .content__text {
+			height: auto;
+			@include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+		}
+	}
+}
+
+.content__title {
+	@include font(TitleSemi, em(18), $MerapDarkGrey);
+}
+
+.content__text {
+	@include font(Arial, em(16), $MerapTextColor);
+	line-height: em-spacing(33, 16);
+}
+
+.overall__text {
+	line-height: em-spacing(26, 16);
+}

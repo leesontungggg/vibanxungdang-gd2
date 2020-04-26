@@ -1,0 +1,438 @@
+$HEIGHT: 40;
+$HEIGHT_PX: 40px;
+$BACKGROUND: #ecedf1; 
+
+.register {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-size: 0px;
+
+    input[type="radio"], input[type="checkbox"] {
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+    }
+}
+
+.input__radio {
+    display: inline-block;
+    &+label {
+        display: inline-block;
+    }
+}
+
+.block, .inline__block {
+    padding: 8px 15px;
+    @include resize($PhabletWidth) {
+        padding: 8px 0px;
+    }
+    @include resize($PhoneWidth) {
+        padding: 4px 0px;
+    }
+}
+
+.inline__block {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(50% - 30px);
+    @include resize($SIZE_TO_BLOCK) {
+        display: block;
+        margin: 0 auto;
+        width: calc(100% - 30px);
+    }
+    @include resize($PhabletWidth) {
+        width: 100%;
+    }
+}
+
+.block {
+    display: block;
+    width: calc(100% - 30px);
+    @include resize($PhabletWidth) {
+        width: 100%;
+    }
+}
+
+.asterisk {
+    color: $MerapGreen;
+    font-size: inherit;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px 2px;
+}
+
+.field__label {
+    display: block;
+    padding: 4px 0px;
+    @include font(Arial, 12px, $MerapTextColor);
+    @include resize($PhabletWidth) {
+        font-size: 10px;
+    }
+}
+.field__input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid $MerapGrey;
+    border-radius: 8px;
+    @include font(Arial, 16px, $MerapDarkGrey);
+    font-weight: bold;
+    line-height: em-spacing($HEIGHT, 16);
+    padding: 4px 0px 0px 10px;
+    &:focus{
+        border-color: $MerapGreen;
+    }
+    @include resize($PhabletWidth) {
+        font-size: 14px;
+    }
+}
+
+
+.career {
+    font-size: 16px;
+    width: calc(100% - 220px); // 210 + 30 but we accept the box spreading out the padding, so we only need 220
+    margin: 12px 0px;
+
+    @include resize($SIZE_TO_BLOCK) {
+        width: 100%;
+    }
+
+    span {
+        @include font(Arial, em(20), $MerapTextColor);
+        font-weight: bold;
+    }
+    input + label {
+        @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+        cursor: pointer;
+        @include font(Arial, em(14), $MerapTextColor);
+        font-weight: bold;
+        padding: em-spacing(10, 14) em-spacing(20, 14);
+        background-color: $BACKGROUND; 
+        border: 0px solid transparent;
+        border-radius: 20px;
+        margin: 0px 10px;
+
+        &:hover {
+            @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+            background-color: $MerapGreen;
+            color: white;
+        }
+    }
+
+    input:checked + label {
+        background-color: $MerapGreen;
+        color: white;
+    }
+
+    @include resize($PhabletWidth) {
+        font-size: 12px;
+    }
+    @include resize($PhoneWidth) {
+        margin: 6px 0px;
+        font-size: 10px;
+        input + label {
+            margin: 0px 2px;
+        }
+    }
+}
+
+.gender, .gift__address {
+    width: auto;
+    max-width: 210px;
+    font-size: 16px;
+
+    input + label {
+        @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+        cursor: pointer;
+        @include font(Arial, em(16), $MerapTextColor);
+        font-weight: bold;
+        position: relative;
+        padding: 3px 0px;
+        padding-left: 30px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 0;
+            margin: 0px;
+            padding: 0px;
+            width: 22px;
+            height: 22px;
+            box-sizing: border-box;
+            border: 1px solid $MerapGrey;
+            border-radius: 50%;
+            background-color: white;
+        }
+        &:before {
+            @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+            content: '';
+            opacity: 0;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 1;
+            margin: 0px;
+            padding: 0px;
+            width: 12px;
+            height: 12px;
+            box-sizing: border-box;
+            border: 0px solid $MerapGrey;
+            border-radius: 50%;
+            background-color: $MerapGreen;
+        }
+
+        &:hover{
+            &:after{
+                border-color: $MerapGreen;
+            }
+            &:before {
+                @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+                opacity: 1;
+            }
+        }
+    }
+    input:checked + label {
+        &:after{
+            border-color: $MerapGreen;
+        }
+
+        &:before {
+            opacity: 1;
+        }
+    }
+
+    #female{
+        margin-left: 30px;
+    }
+
+    @include resize($PhabletWidth) {
+        font-size: 14px;
+        max-width: none;
+        text-align: center;
+    }
+    @include resize($PhoneWidth) {
+        font-size: 12px;
+        input + label {
+            &:after {
+                width: 20px;
+                height: 20px;
+            }
+            &:before {
+                width: 10px;
+                height: 10px;
+            }
+        }
+        #female{
+            margin-left: 15px;
+        }
+    }
+}
+
+.gift__address {
+    max-width: none;
+    input {
+        margin-left: 30px;
+    }
+    @include resize($SIZE_TO_BLOCK) {
+        margin: 0 auto;
+        margin-bottom: 10px;
+        text-align: center;
+        input {
+            margin-left: 10px;
+        }
+    }
+}
+
+.different__address {
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    &.active {
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.form__section {
+    @include font(Arial, 20px, $MerapTextColor);
+    font-weight: bold;
+    width: auto;
+    &--work {
+        display: block;
+        margin-top: 30px;
+    }
+    &--gift {
+        display: inline-block;
+    }
+    @include resize($PhabletWidth) {
+        padding: 4px 0px;
+        font-size: 14px;
+    }
+}
+
+.note {
+    @include font(Arial, 12px, $MerapGreen);
+    line-height: em-spacing(16, 12);
+    font-style: italic;
+    padding: 0px 15px;
+    &--address {
+        margin-top: 35px;
+    }
+    @include resize($PhabletWidth) {
+        padding: 0px;
+        font-size: 10px;
+    }
+}
+
+.agreement {
+    font-size: 16px;
+    .tnc__link {
+        display: inline-block;
+        @include font(inherit, inherit, #2291e9);
+    }
+    input + label {
+        position: relative;
+        @include font(Arial, em(16), $MerapTextColor);
+        line-height: em-spacing(20, 16);
+        font-weight: bold;
+        padding: 4px 4px 4px 34px;
+        display: block;
+        cursor: pointer;
+        @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+  
+        &:before {
+            @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+            content: '';
+            position: absolute;
+            z-index: 0;
+            top: 0px;
+            left: 0px;
+            width: 22px;
+            height: 22px;
+            border: 1px solid $MerapGreen;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+  
+        &:after {
+            @include TransitionWithDurationAndEase(0.3s, $EasingSineOut);
+            content: '';
+            opacity: 0;
+            position: absolute;
+            z-index: 1;
+            top: 9px;
+            left: 11px;
+            width: 6px;
+            height: 12px;
+            border: solid $MerapGreen;
+            border-width: 0 2px 2px 0;
+            transform: translate(-50%, -50%) rotate(45deg) scale(1, 1);
+        }
+    }
+
+    input:checked + label {
+        &:after{
+            opacity: 1;
+        }
+    }
+
+    @include resize($PhabletWidth) {
+        font-size: 14px;
+    }
+}
+
+.submit__button{
+    border: none;
+    &--register {
+        margin: 30px auto;
+    }
+    @include resize($PhabletWidth) {
+        font-size: 14px;
+        &--register {
+            margin: 20px auto;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.dob, .work__city, .work__dist, .gift__city, .gift__dist{
+    .dropdown{
+        position: relative;
+        margin: 0px 10px;
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(33.33% - 14px);
+        height: $HEIGHT_PX;
+        background-color: $BACKGROUND; 
+        border: 0px solid transparent;
+        border-radius: 4px;
+
+        .dropdown__box {
+            box-sizing: border-box;
+            border: 1px solid $BACKGROUND;
+            border-radius: 4px;
+            background-color: $BACKGROUND; 
+        }
+
+        .dropdown__box__arrow {
+            position: absolute;
+            z-index: 4;
+            top: calc(50% - 2px);
+            right: 12px;
+            transform: translate(0px, -50%);
+            user-select: none;
+            pointer-events: none;
+            img {
+                display: block;
+                width: 14px;
+                height: auto;
+            }
+        }
+
+        .dropdown__item:first-child {
+            background-color: $BACKGROUND;
+            @include font(Arial, 14px, $MerapTextColor);
+            font-weight: bold;
+        }
+    }
+    .dropdown:nth-child(2){
+        margin-left: 0px;
+    }
+    .dropdown:last-child {
+        margin-right: 0px;
+    }
+    @include resize($PhoneWidth) {
+        .dob__day, .dob__month, .dob__year {
+            width: calc(33.33% - 7px);
+        }
+        .dropdown:nth-child(3){
+            margin: 0px;
+        }
+    }
+}
+
+.work__city, .work__dist, .gift__city, .gift__dist {
+    .dropdown {
+        width: 100%;
+    }
+}
+
+// Manage z-index;
+.BTT_button {
+    z-index: 6;
+}
+.work__city {
+    z-index: 5;
+}
+.work__dist {
+    z-index: 4;
+}
+.gift__city {
+    z-index: 3;
+}
+.gift__dist {
+    z-index: 2;
+}
