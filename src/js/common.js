@@ -19,8 +19,9 @@ var isChrome = !!window.chrome && !!window.chrome.webstore;
 // Blink engine detection
 var isBlink = (isChrome || isOpera) && !!window.CSS;
 //var baseUrl = 'http://ngodungcan.website/merap/api/public/api/';
-var baseUrl = 'http://vibanxungdang.merapgroup.com.vn/system/api/';
-var isLocal = window.location.protocol === 'file:' || window.location.protocol === 'localhost:';
+var baseUrl = 'http://vibanxungdang.merapgroup.com.vn/api/';
+var isLocal = true;
+// var isLocal = window.location.protocol === 'file:' || window.location.protocol === 'localhost:';
 const MerapCustomEvent = {
     START_GAME: 'start-game',
     END_GAME: 'end-game'
