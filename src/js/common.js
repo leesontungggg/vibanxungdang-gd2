@@ -67,7 +67,7 @@ $(function () {
             }
         },
 
-        getGameData = function(weekID) {
+        getGameData = function (weekID) {
             const week = (Number(weekID) + 1)
             //const baseUrl = 'http://ngodungcan.website/merap/'
             const baseUrl = ''
@@ -82,7 +82,7 @@ $(function () {
                 success: function (data) {
                     if (data) {
                         $('.winner__text').html(data);
-                    }else {
+                    } else {
                         $('.winner__text').html('Rất nhiều giải thưởng hấp dẫn đang chờ bạn');
                     }
                 }
@@ -95,7 +95,7 @@ $(function () {
                 success: function (data) {
                     if (data) {
                         $('.term__text').html(data);
-                    }else {
+                    } else {
                         $('.term__text').html('Chi tiết sẽ được công bố vào ngày bắt đầu cuộc thi');
                     }
                 }
@@ -108,7 +108,7 @@ $(function () {
                 success: function (data) {
                     if (data) {
                         $('.prize__text').html(data);
-                    }else {
+                    } else {
                         $('.prize__text').html('Giải thưởng sẽ được công bố vào ngày bắt đầu cuộc thi');
                     }
                 }
@@ -126,11 +126,11 @@ $(function () {
 
                 if ($(window).width() < 1000 || isMobile()) {
                     image.css({
-                         width: '100%',
-                         height: 'auto',
-                         top: '0px',
-                         left: '0px',
-                         transform: 'none'
+                        width: '100%',
+                        height: 'auto',
+                        top: '0px',
+                        left: '0px',
+                        transform: 'none'
                     });
 
                     holder.css({
@@ -204,11 +204,26 @@ $(function () {
         },
 
         hideVideoThumb = function () {
-            TweenMax.to($(".merap-video-thumb-image"), .3, {autoAlpha: 0, ease: Sine.easeOut});
-            TweenMax.to($(".merap-video-thumb-overlay"), .3, {autoAlpha: 0, ease: Sine.easeOut});
-            TweenMax.to($(".merap-video-thumb-svg"), .3, {autoAlpha: 0, ease: Sine.easeOut});
-            TweenMax.to($(".video__title--mobile"), .3, {autoAlpha: 0, ease: Sine.easeOut});
-            TweenMax.to($(".video__info--mobile"), .3, {autoAlpha: 0, ease: Sine.easeOut});
+            TweenMax.to($(".merap-video-thumb-image"), .3, {
+                autoAlpha: 0,
+                ease: Sine.easeOut
+            });
+            TweenMax.to($(".merap-video-thumb-overlay"), .3, {
+                autoAlpha: 0,
+                ease: Sine.easeOut
+            });
+            TweenMax.to($(".merap-video-thumb-svg"), .3, {
+                autoAlpha: 0,
+                ease: Sine.easeOut
+            });
+            TweenMax.to($(".video__title--mobile"), .3, {
+                autoAlpha: 0,
+                ease: Sine.easeOut
+            });
+            TweenMax.to($(".video__info--mobile"), .3, {
+                autoAlpha: 0,
+                ease: Sine.easeOut
+            });
         },
         getMilestonePos = function () {
             $('.game__holder .game__item').each(function (e) {
@@ -236,7 +251,10 @@ $(function () {
             const currentMS = milestoneArray[currentIndex];
             milestoneTime.text(currentMS.time);
             milestoneName.text(currentMS.gameName);
-            TweenMax.to(milestone, .3, {left: currentMS.left, ease: Back.easeOut});
+            TweenMax.to(milestone, .3, {
+                left: currentMS.left,
+                ease: Back.easeOut
+            });
 
 
             const src = "./images/all-prize-" + (Number(currentIndex) + 1) + ".png"
@@ -305,7 +323,10 @@ $(function () {
             updateGame();
         },
         initBTT = function () {
-            TweenMax.to(floatingMenu, .3, {autoAlpha: 0, ease: Sine.easeOut});
+            TweenMax.to(floatingMenu, .3, {
+                autoAlpha: 0,
+                ease: Sine.easeOut
+            });
             $(window).scroll(function (e) {
                 showHideBTT();
             });
@@ -313,19 +334,24 @@ $(function () {
             bttButton.on('click', function (e) {
                 e.preventDefault();
                 $('body,html').animate({
-                        scrollTop: 0
-                    }, 700
-                );
+                    scrollTop: 0
+                }, 700);
             });
         },
 
         showHideBTT = function () {
             if ($(window).scrollTop() > 300) {
                 bttButton.addClass('cd-is-visible');
-                TweenMax.to(floatingMenu, .3, {autoAlpha: 1, ease: Sine.easeOut})
+                TweenMax.to(floatingMenu, .3, {
+                    autoAlpha: 1,
+                    ease: Sine.easeOut
+                })
             } else {
                 bttButton.removeClass('cd-is-visible cd-fade-out');
-                TweenMax.to(floatingMenu, .3, {autoAlpha: 0, ease: Sine.easeOut})
+                TweenMax.to(floatingMenu, .3, {
+                    autoAlpha: 0,
+                    ease: Sine.easeOut
+                })
             }
 
             if ($(window).scrollTop() > 1200) {
@@ -334,14 +360,18 @@ $(function () {
         },
 
         hideLoader = function () {
-            TweenMax.to(loader, .1, {autoAlpha: 0, ease: Sine.easeOut, onComplete: () => {
-                fnResize();
-                const hash = window.location.hash
-                if(hash.includes('quiz-section')) {
-                    const quizSectionPos = $(document).height() - $("#quiz-section").height() - 150
-                    $(window).scrollTop(quizSectionPos)
+            TweenMax.to(loader, .1, {
+                autoAlpha: 0,
+                ease: Sine.easeOut,
+                onComplete: () => {
+                    fnResize();
+                    const hash = window.location.hash
+                    if (hash.includes('quiz-section')) {
+                        const quizSectionPos = $(document).height() - $("#quiz-section").height() - 150
+                        $(window).scrollTop(quizSectionPos)
+                    }
                 }
-            }});
+            });
             $("body").css("overflow-y", "visible");
         },
 
@@ -380,11 +410,26 @@ function onPlayerStateChange(event) {
     }*/
 
     if (event.data == YT.PlayerState.ENDED) {
-        TweenMax.to($(".merap-video-thumb-image"), .3, {autoAlpha: 1, ease: Sine.easeOut});
-        TweenMax.to($(".merap-video-thumb-overlay"), .3, {autoAlpha: 1, ease: Sine.easeOut});
-        TweenMax.to($(".merap-video-thumb-svg"), .3, {autoAlpha: 1, ease: Sine.easeOut});
-        TweenMax.to($(".video__title--mobile"), .3, {autoAlpha: 1, ease: Sine.easeOut});
-        TweenMax.to($(".video__info--mobile"), .3, {autoAlpha: 1, ease: Sine.easeOut});
+        TweenMax.to($(".merap-video-thumb-image"), .3, {
+            autoAlpha: 1,
+            ease: Sine.easeOut
+        });
+        TweenMax.to($(".merap-video-thumb-overlay"), .3, {
+            autoAlpha: 1,
+            ease: Sine.easeOut
+        });
+        TweenMax.to($(".merap-video-thumb-svg"), .3, {
+            autoAlpha: 1,
+            ease: Sine.easeOut
+        });
+        TweenMax.to($(".video__title--mobile"), .3, {
+            autoAlpha: 1,
+            ease: Sine.easeOut
+        });
+        TweenMax.to($(".video__info--mobile"), .3, {
+            autoAlpha: 1,
+            ease: Sine.easeOut
+        });
     }
 }
 
