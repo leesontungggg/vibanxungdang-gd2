@@ -20,7 +20,8 @@ var isChrome = !!window.chrome && !!window.chrome.webstore;
 var isBlink = (isChrome || isOpera) && !!window.CSS;
 //var baseUrl = 'http://ngodungcan.website/merap/api/public/api/';
 var baseUrl = 'http://vibanxungdang.merapgroup.com.vn/system/api/';
-var isLocal = window.location.protocol === 'file:' || window.location.protocol === 'localhost:';
+var isLocal = true;
+// var isLocal = window.location.protocol === 'file:' || window.location.protocol === 'localhost:';
 const MerapCustomEvent = {
     START_GAME: 'start-game',
     END_GAME: 'end-game'
@@ -52,7 +53,7 @@ $(function () {
             setTimeout(hideLoader, 500);
         },
         pageSetup = function () {
-            
+
             getMilestonePos();
             if (isMobile() || $(window).width() < 1000) {
                 initDragMilestone();
@@ -82,7 +83,7 @@ $(function () {
                     if (data) {
                         $('.winner__text').html(data);
                     }else {
-                        $('.winner__text').html('Rất nhiều giải thưởng hấp dẫn đang chờ bạn'); 
+                        $('.winner__text').html('Rất nhiều giải thưởng hấp dẫn đang chờ bạn');
                     }
                 }
             })
@@ -95,7 +96,7 @@ $(function () {
                     if (data) {
                         $('.term__text').html(data);
                     }else {
-                        $('.term__text').html('Chi tiết sẽ được công bố vào ngày bắt đầu cuộc thi'); 
+                        $('.term__text').html('Chi tiết sẽ được công bố vào ngày bắt đầu cuộc thi');
                     }
                 }
             })
@@ -108,7 +109,7 @@ $(function () {
                     if (data) {
                         $('.prize__text').html(data);
                     }else {
-                        $('.prize__text').html('Giải thưởng sẽ được công bố vào ngày bắt đầu cuộc thi'); 
+                        $('.prize__text').html('Giải thưởng sẽ được công bố vào ngày bắt đầu cuộc thi');
                     }
                 }
             })
