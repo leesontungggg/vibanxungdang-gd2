@@ -3544,7 +3544,7 @@ b {
   display: block;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 70%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -3552,6 +3552,12 @@ b {
   transform: translate(-50%, -50%);
   margin: 0px;
   font-size: 0px;
+}
+
+@media screen and (max-width: 520px) {
+  .chat__holder--result {
+    top: 50%;
+  }
 }
 
 .chat__holder--result .chat__icon,
