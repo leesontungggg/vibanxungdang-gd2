@@ -174,7 +174,7 @@ $(function () {
         TweenMax.to(profileSection, 0.3, {autoAlpha: 1, ease:Sine.easeOut});
     },
     onProfileError = function (error){
-        const e = e.responseJSON
+        const e = error.responseJSON
         if (e.message) {
             showErrorWithMessage(registrationType.PROFILE, e.message)
         } else {
@@ -193,6 +193,8 @@ $(function () {
             const value = $('#' + inputFields[key]).val()
             profileData[key] = value;
         })
+
+        console.log(profileData)
     },
     doValidate = function () {
         const noneRequiredKey = ['email']
@@ -218,7 +220,7 @@ $(function () {
             success: onGetCitySuccess,
             error: onGetCityError
         })
-        
+
     },
     onGetCitySuccess = function (response) {
         cityDataArray = response;
