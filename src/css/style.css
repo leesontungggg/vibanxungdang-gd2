@@ -2286,6 +2286,12 @@ b {
   margin-bottom: 32px;
 }
 
+.field__input::-webkit-outer-spin-button,
+.field__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .field__input:focus {
   border-color: #00a64f;
 }
