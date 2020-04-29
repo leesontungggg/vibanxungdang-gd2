@@ -19,9 +19,9 @@ var isChrome = !!window.chrome && !!window.chrome.webstore;
 // Blink engine detection
 var isBlink = (isChrome || isOpera) && !!window.CSS;
 //var baseUrl = 'http://ngodungcan.website/merap/api/public/api/';
-var baseUrl = 'http://vibanxungdang.merapgroup.com.vn/api/';
-var isLocal = true;
-// var isLocal = window.location.protocol === 'file:' || window.location.protocol === 'localhost:';
+var baseUrl = 'http://vibanxungdang.merapgroup.com.vn/2020/api/public/api/';
+// var isLocal = true;
+var isLocal = window.location.protocol === 'file:' || window.location.protocol === 'localhost:';
 const MerapCustomEvent = {
     START_GAME: 'start-game',
     END_GAME: 'end-game'
@@ -49,6 +49,7 @@ $(function () {
         pageInit = function () {
             pageSetup();
             calculateImage();
+            addSubmitEnterListener();
             $(window).on("resize", fnResize);
             setTimeout(hideLoader, 500);
         },
@@ -378,7 +379,28 @@ $(function () {
         fnResize = function (e) {
             clearTimeout(timeoutID);
             calculateImage();
+        },
+
+        addSubmitEnterListener = function () {
+            var phone_input = document.getElementById("phone");
+
+            phone_input.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("register-button").click();
+                }
+            });
+
+            var refcode_input = document.getElementById("refcode");
+
+            refcode_input.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("register-button").click();
+                }
+            });
         };
+
 
     setTimeout(pageInit, 100);
 });

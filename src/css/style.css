@@ -3485,7 +3485,7 @@ b {
 .quiz__content {
   height: auto;
   overflow: hidden;
-  margin-top: 13%;
+  margin-top: 20%;
 }
 
 @media screen and (max-width: 1000px) {
