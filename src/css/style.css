@@ -1386,8 +1386,8 @@ b {
 }
 
 .intro {
+  padding: 100px 0px 0px 0px;
   margin: 0 auto;
-  margin-top: 100px;
   width: 100%;
   max-width: 1440px;
   position: relative;
@@ -1405,39 +1405,45 @@ b {
 
 .intro .intro__step {
   position: absolute;
-  top: 0px;
   left: 0px;
 }
 
 .intro #intro-step-1 {
-  width: 36%;
-  top: 50%;
+  width: 60%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin-left: -30%;
   z-index: 1;
+}
+
+@media screen and (max-width: 520px) {
+  .intro #intro-step-1 {
+    width: 75%;
+    margin-left: -37.5%;
+  }
 }
 
 .intro #intro-step-2 {
 
-  width: 36%;
-  top: 50%;
+  width: 40%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin-left: -20%;
+  bottom: -10%;
+
   z-index: 1;
+}
+
+@media screen and (max-width: 520px) {
+  .intro #intro-step-2 {
+    width: 50%;
+    margin-left: -25%;
+    bottom: -20%;
+  }
 }
 
 .intro #intro-step-3 {
 
-  width: 70%;
-  top: 50%;
+  width: 65%;
+  top: 60%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -1683,10 +1689,10 @@ b {
 
 .info {
   width: calc(100% - 272px);
-  max-width: 825px;
+  max-width: 830px;
   margin: 0px auto;
   display: block;
-  padding: 15% 0px 50px 0px;
+  padding: 15% 0px 16px 0px;
   text-align: center;
   font-size: 16px;
 }
@@ -1712,7 +1718,7 @@ b {
 
 @media screen and (max-width: 420px) {
   .info {
-    width: calc(100% - 100px);
+    width: calc(100% - 90px);
     font-size: 10px;
   }
 }
@@ -1733,6 +1739,34 @@ b {
 
 .info .info__content b {
   font-family: Arial;
+}
+
+.chan-duong-break {
+  display: inline;
+  clear:both
+}
+
+.cac-ban-van {
+  display: inline;
+  clear:both
+}
+
+@media screen and (max-width: 768px) {
+  .chan-duong-break {
+    display: none;
+  }
+  .cac-ban-van {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .chan-duong-break {
+    display: none;
+  }
+  .cac-ban-van {
+    display: none;
+  }
 }
 
 .prize {
@@ -1906,7 +1940,7 @@ b {
 
 .profile {
   font-size: 16px;
-  padding-top: 15%;
+  padding-top: 10.6%;
   position: relative;
   min-height: 500px;
 }
@@ -2284,12 +2318,6 @@ b {
   line-height: 2.5em;
   padding: 4px 0px 0px 10px;
   margin-bottom: 32px;
-}
-
-.field__input::-webkit-outer-spin-button,
-.field__input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 .field__input:focus {
@@ -3238,7 +3266,7 @@ b {
   align-items: center;
   width: 100%;
   position: relative;
-  height: 70vw;
+  height: 75vw;
 }
 
 
@@ -3246,7 +3274,7 @@ b {
 @media screen and (max-width: 840px) {
   .tnc__image__holder {
     width: 100%;
-    height: 65vw;
+    height: 70vw;
   }
 
   .tnc__image {
@@ -3257,7 +3285,7 @@ b {
 @media screen and (max-width: 420px) {
   .tnc__image__holder {
     width: 100%;
-    height: 100vw;
+    height: 105vw;
   }
 }
 
@@ -3266,14 +3294,14 @@ b {
 .tnc__image--1 {
   position: absolute;
   display: block;
-  width: 70%;
+  width: 80%;
   height: auto;
   top: 0px;
 }
 
 @media screen and (max-width: 420px) {
   .tnc__image--1 {
-    width: 75%;
+    width: 80%;
     height: auto;
     top: 0px;
   }
@@ -3283,10 +3311,10 @@ b {
 .tnc__image--2 {
   position: absolute;
   display: block;
-  width: 55%;
+  width: 50%;
   height: auto;
   left: -50px;
-  bottom: 0;
+  bottom: 30px;
 }
 
 @media screen and (max-width: 420px) {
@@ -3299,7 +3327,7 @@ b {
 
 @media screen and (max-width: 768px) {
   .tnc__image--2 {
-    width: 55%;
+    width: 50%;
     height: auto;
     left: 0px;
   }
@@ -3447,10 +3475,8 @@ b {
 }
 
 .quiz {
-  background-image: url("../images/register-header.png"), url("../images/quiz-section-background-1.png"), url("../images/quiz-section-background-2.png");
-  background-size: 100%, 8%, 10%;
-  background-position: top left, 0% 90%, 100% 30%;
-  background-repeat: no-repeat, no-repeat, no-repeat;
+  background: url("../images/register-header.jpg") no-repeat;
+  background-size: 100%;
   width: calc(100% - 230px);
   border: 0px solid transparent;
   border-radius: 6px;
@@ -3471,21 +3497,10 @@ b {
   }
 }
 
-@media screen and (max-width: 520px) {
-  .quiz {
-    background-image: url("../images/register-header.png"), url("../images/quiz-section-background-mobile-1.png"), url("../images/quiz-section-background-mobile-2.png");
-    background-size: 100%, 15%, 15%;
-    background-position: top left,0% 85%, 100% 10%;
-    background-repeat: no-repeat, no-repeat, no-repeat;
-  }
-}
-
-
-
 .quiz__content {
   height: auto;
   overflow: hidden;
-  margin-top: 20%;
+  margin-top: 13%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -3544,7 +3559,7 @@ b {
   display: block;
   position: absolute;
   left: 50%;
-  top: 70%;
+  top: 50%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -3552,12 +3567,6 @@ b {
   transform: translate(-50%, -50%);
   margin: 0px;
   font-size: 0px;
-}
-
-@media screen and (max-width: 520px) {
-  .chat__holder--result {
-    top: 50%;
-  }
 }
 
 .chat__holder--result .chat__icon,

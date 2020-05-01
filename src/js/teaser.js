@@ -1,5 +1,10 @@
 'use strict';
 
+function detectMob() {
+  var isMobile = (window.innerWidth < 768);
+  return (isMobile);
+}
+
 $(function () {
   var prize_1 = $('#tnc__image--1'),
     prize_2 = $('#tnc__image--2'),
@@ -18,19 +23,36 @@ $(function () {
         })
       }
 
+
+
       const tl = new TimelineMax({
         repeat: 0,
         repeatDelay: 1
       })
       tl.pause();
 
-      let fadeInStep1 = TweenMax.to(prize_1, 0.3, {
-        css: {
-          scale: 1,
-          opacity: 1
-        },
-        ease: Sine.easeOut
-      })
+      $(window).scroll(function () {
+        var st = $(this).scrollTop();
+
+        if (detectMob()) {
+          if (st + $(window).height() / 2 >= $('#prize-section').offset().top) {
+            tl.play();
+          }
+        } else {
+          if (st + $(window).height() / 2 >= $('#prize-section').offset().top) {
+            tl.play();
+          }
+        }
+      });
+
+      let fadeInStep1 = TweenMax.fromTo(prize_1, 1, {
+        yPercent: 20,
+        opacity: 0.0
+      }, {
+        yPercent: 0,
+        opacity: 1,
+        ease: Power4.easeInOut
+      });
       let shakingStep1 = TweenMax.to(prize_1, 0.1, {
         x: "+=20",
         yoyo: true,
@@ -39,13 +61,14 @@ $(function () {
 
 
 
-      let fadeInStep2 = TweenMax.to(prize_2, 0.3, {
-        css: {
-          scale: 1,
-          opacity: 1
-        },
-        ease: Sine.easeOut
-      })
+      let fadeInStep2 = TweenMax.fromTo(prize_2, 1, {
+        yPercent: 20,
+        opacity: 0.0
+      }, {
+        yPercent: 0,
+        opacity: 1,
+        ease: Power4.easeInOut
+      });
 
       let shakingStep2 = TweenMax.to(prize_2, 0.1, {
         x: "+=20",
@@ -54,10 +77,14 @@ $(function () {
       });
 
 
-      let fadeInStep3 = TweenMax.to(prize_3, 0.3, {
-        autoAlpha: 1,
-        ease: Sine.easeOut
-      })
+      let fadeInStep3 = TweenMax.fromTo(prize_3, 1, {
+        yPercent: 20,
+        opacity: 0.0
+      }, {
+        yPercent: 0,
+        opacity: 1,
+        ease: Power4.easeInOut
+      });
 
       let shakingStep3 = TweenMax.to(prize_3, 0.1, {
         x: "+=20",
@@ -66,25 +93,21 @@ $(function () {
       });
 
 
-      tl.addLabel("step1In")
       tl.add(fadeInStep1, "step1In+=0")
 
       // tl.addLabel("step1Shaking")
       // tl.add(shakingStep1, "step1In+=0.3")
 
-      tl.addLabel("step2In")
-      tl.add(fadeInStep2, "step2In+=0")
+      tl.add(fadeInStep2, "step1In+=0.1")
 
       // tl.addLabel("step2Shaking")
       // tl.add(shakingStep2, "step2Shaking+=0.3")
 
-      tl.addLabel("step3In")
-      tl.add(fadeInStep3, "step3In+=0")
+      tl.add(fadeInStep3, "step1In+=0.2")
 
       // tl.addLabel("step3Shaking")
       // tl.add(shakingStep3, "step3Shaking+=0.3")
 
-      tl.play();
     };
 
   init();
@@ -92,70 +115,66 @@ $(function () {
 
 $(function () {
 
-  var choDonTroChoi = $('#intro-step-1'),
-    tenTroChoi = $('#intro-step-3'),
-    init = function () {
-      const stepArray = [
-        choDonTroChoi, tenTroChoi
-      ]
-      for (var i = 0; i < stepArray.length; i++) {
-        var item = stepArray[i]
-        TweenMax.set(item, {
-          css: {
-            opacity: 0
-          }
-        })
-      }
-
-      const tl = new TimelineMax({
-        repeat: 0,
-        repeatDelay: 1,
-        yoyo: true
-      })
-      tl.pause();
-
-      let fadeInStep1 = TweenMax.to(choDonTroChoi, 0.3, {
+  var tenTroChoi = $('#intro-step-1'),
+    thoiGian = $('#intro-step-2'),
+  init = function () {
+    const stepArray = [
+      tenTroChoi, thoiGian
+    ]
+    for (var i = 0; i < stepArray.length; i++) {
+      var item = stepArray[i]
+      TweenMax.set(item, {
         css: {
-          scale: 1,
-          opacity: 1
-        },
-        ease: Sine.easeOut
-      })
-
-      let fadeOutStep1 = TweenMax.to(choDonTroChoi, 0.3, {
-        css: {
-          scale: 1.2,
           opacity: 0
-        },
-        ease: Sine.easeOut
+        }
       })
+    }
 
-      let fadeInStep3 = TweenMax.to(tenTroChoi, 0.3, {
-        autoAlpha: 1,
-        ease: Sine.easeOut
-      })
+    const tl = new TimelineMax({
+      repeat: 0,
+      repeatDelay: 1
+    })
+    tl.pause();
 
-      // let shakingStep3 = TweenMax.to(tenTroChoi, 0.1, {
-      //   x: "+=20",
-      //   yoyo: true,
-      //   repeat: 5
-      // });
+    $(window).scroll(function () {
+      var st = $(this).scrollTop();
 
-      tl.addLabel("step1In")
-      tl.add(fadeInStep1, "step1In+=0")
+      if (detectMob()) {
+        if (st >= $('#intro-section').offset().top) {
+          tl.play();
+        }
+      } else {
+        if (st - 0.5 * $(window).height() >= $('#intro-section').offset().top) {
+          tl.play();
+        }
+      }
+    });
 
-      tl.addLabel("step1Out")
-      tl.add(fadeOutStep1, "step1In+=3")
+    let fadeInStep1 = TweenMax.fromTo(tenTroChoi, 0.3, {
+      yPercent: 20,
+      opacity: 0.0
+    }, {
+      yPercent: 1,
+      opacity: 1,
+      ease: Power4.easeIn
+    });
 
+    let fadeInStep2 = TweenMax.fromTo(thoiGian, 0.3, {
+      yPercent: 20,
+      opacity: 0.0
+    }, {
+      yPercent: 0,
+      opacity: 1,
+      ease: Power4.easeIn
+    });
 
-      tl.addLabel("step3In")
-      tl.add(fadeInStep3, "step3In+=0")
+    tl.addLabel("step1In")
+    tl.add(fadeInStep1, "step1In+=0.3")
 
-      // tl.addLabel("step3Shaking")
-      // tl.add(shakingStep3, "step3In+=0")
+    tl.addLabel("step2In")
+    tl.add(fadeInStep2, "step2In+=1")
 
-      tl.play();
-    };
+  };
 
   init();
 })
