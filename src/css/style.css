@@ -1912,7 +1912,7 @@ b {
 }
 
 .registration {
-  background: url("../images/register-header.jpg") no-repeat;
+  background: url("../images/register-header.png") no-repeat;
   background-size: 100%;
   width: calc(100% - 230px);
   border: 0px solid transparent;
@@ -2305,6 +2305,13 @@ b {
     font-size: 10px;
   }
 }
+
+.field__input::-webkit-outer-spin-button,
+.field__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 .field__input {
   width: 100%;
@@ -3475,8 +3482,10 @@ b {
 }
 
 .quiz {
-  background: url("../images/register-header.jpg") no-repeat;
-  background-size: 100%;
+  background-image: url("../images/register-header.png"), url("../images/quiz-section-background-1.png"), url("../images/quiz-section-background-2.png");
+  background-size: 100%, 8%, 10%;
+  background-position: top left, 0% 90%, 100% 30%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   width: calc(100% - 230px);
   border: 0px solid transparent;
   border-radius: 6px;
@@ -3497,10 +3506,19 @@ b {
   }
 }
 
+@media screen and (max-width: 520px) {
+  .quiz {
+    background-image: url("../images/register-header.png"), url("../images/quiz-section-background-mobile-1.png"), url("../images/quiz-section-background-mobile-2.png");
+    background-size: 100%, 15%, 15%;
+    background-position: top left,0% 85%, 100% 10%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+  }
+}
+
 .quiz__content {
   height: auto;
   overflow: hidden;
-  margin-top: 13%;
+  margin-top: 20%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -3559,7 +3577,7 @@ b {
   display: block;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 70%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -3567,6 +3585,12 @@ b {
   transform: translate(-50%, -50%);
   margin: 0px;
   font-size: 0px;
+}
+
+@media screen and (max-width: 520px) {
+  .chat__holder--result {
+    top: 50%;
+  }
 }
 
 .chat__holder--result .chat__icon,
@@ -3729,7 +3753,7 @@ b {
 
 .congrate {
   display: none;
-  background: url("../images/register-header.jpg") no-repeat;
+  background: url("../images/register-header.png") no-repeat;
   background-size: 100%;
   width: calc(100% - 230px);
   border: 0px solid transparent;
