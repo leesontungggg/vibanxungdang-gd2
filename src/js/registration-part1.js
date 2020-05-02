@@ -347,7 +347,7 @@ $(function () {
                             if( refcode.length == 7 ) {
                                 return true
                             } else {
-                                showErrorWithMessage(registrationType.LOGIN, 'Vui lòng kiểm tra lại mã người giới thiệu.')
+                                showErrorWithMessage(registrationType.REGISTER, 'Vui lòng kiểm tra lại mã người giới thiệu.')
                                 return false;
                             }
                         } else {
