@@ -342,6 +342,7 @@ $(function () {
                 if (registerData[key] === null || registerData[key] === undefined || registerData[key] === '') {
                     if (key == 'refcode') {
                         const refcode = $("#login-refcode").val();
+                        console.log(refcode)
                         if ( refcode.length > 0) {
                             if( refcode.length == 7 ) {
                                 return true
