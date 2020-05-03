@@ -36,7 +36,7 @@ $(function () {
         errorTimeID = 0,
         errorTimeout = 5000,
         keyData = [
-            'type', 'gender', 'name', 'birthday', 'phone', 'refcode'
+            'type', 'gender', 'name', 'birthday', 'phone', 'ref_code'
         ],
         inputFields = {
             name: 'fullname',
@@ -55,7 +55,7 @@ $(function () {
             gender: null, //0 || 1,
             birthday: null, //'2018-12-14',
             phone: null, //'0984686535'
-            refcode: null, //'VBXD001'
+            ref_code: null, //'VBXD001'
         },
         menuLoginButton = $("#menu-login"),
         subLoginButton = $("#reminder-login"),
@@ -340,8 +340,8 @@ $(function () {
             for (let i = 0; i < keyData.length; i++) {
                 const key = keyData[i]
                 if (registerData[key] === null || registerData[key] === undefined || registerData[key] === '') {
-                    if (key == 'refcode') {
-                        const refcode = $("#refcode").val();
+                    if (key == 'ref_code') {
+                        const refcode = $("#ref_code").val();
                         console.log(refcode)
                         if ( refcode.length > 0) {
                             if( refcode.length == 7 ) {
@@ -367,13 +367,13 @@ $(function () {
             const refcode = $("#login-refcode").val();
             const loginData = {
                 phone: phone,
-                refcode: null
+                ref_code: null
             };
             if (phone.length > 0) {
                 if (isLocal) {
                     if (refcode.length > 0) {
                         if (refcode.length == 7) {
-                            loginData.refcode = refcode;
+                            loginData.ref_code = refcode;
                             console.log(loginData)
                             onLoginSuccess(mockLoginResponse);
                         } else {
@@ -385,7 +385,7 @@ $(function () {
                 } else {
                     if (refcode.length > 0) {
                         if (refcode.length == 7) {
-                            loginData.refcode = refcode;
+                            loginData.ref_code = refcode;
                             console.log(loginData)
                             const loginURL = baseUrl + 'login';
                             $.ajax({

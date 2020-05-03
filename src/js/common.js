@@ -391,7 +391,7 @@ $(function () {
                 }
             });
 
-            var refcode_input = document.getElementById("refcode");
+            var refcode_input = document.getElementById("ref_code");
 
             refcode_input.addEventListener("keyup", function (event) {
                 if (event.keyCode === 13) {
@@ -453,6 +453,20 @@ function onPlayerStateChange(event) {
             ease: Sine.easeOut
         });
     }
+}
+
+$("#login-refcode").keypress(function(event) {
+    var character = String.fromCharCode(event.keyCode);
+    return isValid(character);
+});
+
+$("#ref_code").keypress(function(event) {
+    var character = String.fromCharCode(event.keyCode);
+    return isValid(character);
+});
+
+function isValid(str) {
+    return !/[~`!@#$%\^&*()+=\-\[\]\\';,./{}|\\":<>\?]/g.test(str);
 }
 
 function stopVideo() {
