@@ -61,6 +61,7 @@ $(function () {
     congrateTitle = $("#congrate-title"),
     congrateMessage = $("#congrate-message"),
     quizSection = $("#quiz-section"),
+    quizResultFeedback = $('#quiz-result-feedback'),
     congrateMessageId,
     setup = function () {
         window.addEventListener('click', collapseAllDD)
@@ -254,6 +255,7 @@ $(function () {
             hideProfileSection();
             hideCongrate();
             setTimeout(showQuizSection, 100);
+            quizResultFeedback.css('display','none')
         } else {
             showCongrateMessage();
         }
