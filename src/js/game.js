@@ -266,12 +266,12 @@ $(function () {
             let text = '';
             const gameLeft = Number(window.localStorage.getItem('gameLeft'));
             if (correctAnswer <= 2) {
-                text = 'Bạn đã trả lời đúng ' + userResult + ' câu hỏi. Bạn còn ' + ( gameLeft ) + '/3 lượt chơi.';
+                text = 'Bạn đã trả lời đúng <strong>' + userResult + '</strong> câu hỏi. Bạn còn <strong>' + ( gameLeft ) + '/3</strong> lượt chơi.';
             }
             if (correctAnswer === maxQuiz) {
                 text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả 3 câu. Bạn còn ' + ( gameLeft ) + '/3 lượt chơi.'
             }
-            quizResultContent.text(text)
+            quizResultContent.append(text)
             quizContent.css('display','none')
             TweenMax.killTweensOf(quizResultFeedback)
             TweenMax.killTweensOf(quizResult)
