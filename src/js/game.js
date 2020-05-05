@@ -106,7 +106,6 @@ $(function () {
                 quizArray[0].question ='Câu hỏi 1: ' + quizArray[0].question;
                 quizArray[1].question ='Câu hỏi 2: ' + quizArray[1].question;
                 quizArray[2].question ='Câu hỏi 3: ' + quizArray[2].question;
-                console.log(quizArray);
                 generateQuiz();
             });
         },
