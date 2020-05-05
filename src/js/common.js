@@ -399,6 +399,15 @@ $(function () {
                     document.getElementById("register-button").click();
                 }
             });
+
+            var answer_input = document.getElementById("answer-input");
+
+            answer_input.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("quiz-button").click();
+                }
+            });
         };
 
 

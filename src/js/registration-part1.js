@@ -40,7 +40,8 @@ $(function () {
         ],
         inputFields = {
             name: 'fullname',
-            phone: 'phone'
+            phone: 'phone',
+            ref_code: 'ref_code'
         },
         errorMessage = {
             type: 'Vui lòng chọn vị trí công việc của bạn!',
@@ -333,6 +334,7 @@ $(function () {
             registerData.birthday = dob;
             Object.keys(inputFields).forEach((key) => {
                 const value = $('#' + inputFields[key]).val()
+
                 registerData[key] = value;
             })
         },
@@ -342,9 +344,8 @@ $(function () {
                 if (registerData[key] === null || registerData[key] === undefined || registerData[key] === '') {
                     if (key == 'ref_code') {
                         const refcode = $("#ref_code").val();
-                        console.log(refcode)
-                        if ( refcode.length > 0) {
-                            if( refcode.length == 7 ) {
+                        if (refcode.length > 0) {
+                            if (refcode.length == 7) {
                                 return true
                             } else {
                                 showErrorWithMessage(registrationType.REGISTER, 'Vui lòng kiểm tra lại mã người giới thiệu.')
@@ -374,7 +375,6 @@ $(function () {
                     if (refcode.length > 0) {
                         if (refcode.length == 7) {
                             loginData.ref_code = refcode;
-                            console.log(loginData)
                             onLoginSuccess(mockLoginResponse);
                         } else {
                             showErrorWithMessage(registrationType.LOGIN, 'Vui lòng kiểm tra lại mã người giới thiệu.')
@@ -386,7 +386,6 @@ $(function () {
                     if (refcode.length > 0) {
                         if (refcode.length == 7) {
                             loginData.ref_code = refcode;
-                            console.log(loginData)
                             const loginURL = baseUrl + 'login';
                             $.ajax({
                                 type: 'POST',
