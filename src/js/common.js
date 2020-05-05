@@ -47,6 +47,7 @@ $(function () {
         prizeArray = [],
         tncImage = $(".tnc__image"),
         pageInit = function () {
+            addHoverButton();
             pageSetup();
             calculateImage();
             addSubmitEnterListener();
@@ -55,9 +56,9 @@ $(function () {
 
             var x = $("#registration-section").position();
             window.scrollTo({
-                top: x.top -80 ,
+                top: x.top - 80,
                 behavior: 'smooth'
-              });
+            });
         },
         pageSetup = function () {
 
@@ -414,6 +415,14 @@ $(function () {
                     document.getElementById("quiz-button").click();
                 }
             });
+        },
+        addHoverButton = function () {
+            var click = document.getElementById("playnow-hover-button");
+            click.addEventListener('click', function () {
+                window.scrollTo(0,document.body.scrollHeight + 600)
+            }, false);
+
+
         };
 
 
@@ -470,12 +479,12 @@ function onPlayerStateChange(event) {
     }
 }
 
-$("#login-refcode").keypress(function(event) {
+$("#login-refcode").keypress(function (event) {
     var character = String.fromCharCode(event.keyCode);
     return isValid(character);
 });
 
-$("#ref_code").keypress(function(event) {
+$("#ref_code").keypress(function (event) {
     var character = String.fromCharCode(event.keyCode);
     return isValid(character);
 });
