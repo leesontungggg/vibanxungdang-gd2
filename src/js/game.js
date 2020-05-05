@@ -144,10 +144,12 @@ $(function () {
                     TweenMax.to(answerHolder, 0.2, {
                         autoAlpha: 0,
                         ease: Sine.easeOut,
-                        onComplete: generateQuiz
+                        onComplete:generateQuiz,
                     })
                 }
             });
+
+
 
             var elmnt = document.getElementById("quiz-section");
             elmnt.scrollIntoView();
@@ -156,23 +158,25 @@ $(function () {
         showAllChat = function () {
             for (let i = 0; i < chatArray.length; i++) {
                 const chat = chatArray[i]
-                const delayTime = chatDelay + i / 1.5
+                const delayTime = chatDelay + i / 9
                 console.log(delayTime)
+                TweenMax.killTweensOf(chat)
+                TweenMax.from(chat, 0.5, {
+                    y: 0,
+                    ease: Quint.easeOut,
+                })
                 TweenMax.to(chat, 0.5, {
                     autoAlpha: 1,
                     ease: Sine.easeOut,
                     delay: delayTime
                 });
-                TweenMax.from(chat, 0.5, {
-                    y: 0,
-                    ease: Quint.easeOut,
-                })
+
             }
             TweenMax.killTweensOf(answerHolder)
             TweenMax.to(answerHolder, 0.2, {
                 autoAlpha: 1,
                 ease: Sine.easeOut,
-                delay: chatDelay + (chatArray.length - 1) / chatDelayFraction
+                delay: chatDelay + (chatArray.length - 1) / 9
             })
         },
         generateQuiz = function () {
@@ -269,6 +273,10 @@ $(function () {
             }
             quizResultContent.text(text)
             quizContent.css('display','none')
+            TweenMax.killTweensOf(quizResultFeedback)
+            TweenMax.killTweensOf(quizResult)
+            TweenMax.killTweensOf(quizResultThankyou1)
+            TweenMax.killTweensOf(quizResultThankyou2)
             TweenMax.to(quizResultFeedback, 0.3, {
                 autoAlpha: 1,
                 ease: Sine.easeOut,
