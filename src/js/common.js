@@ -52,6 +52,12 @@ $(function () {
             addSubmitEnterListener();
             $(window).on("resize", fnResize);
             setTimeout(hideLoader, 500);
+
+            var x = $("#registration-section").position();
+            window.scrollTo({
+                top: x.top -80 ,
+                behavior: 'smooth'
+              });
         },
         pageSetup = function () {
 

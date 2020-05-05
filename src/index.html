@@ -27,8 +27,8 @@
         </div>
     </div>
 
-    <a class="hotline__image--mobile" href="tel:0392458993">
-        <img src="images/hotline-mobile@3x.png" alt="Merap Group - Tet Hieu Nghia 2020 - Hotline" />
+    <a class="hotline__image--mobile" href="#registration-section">
+        <img src="images/play-now-mobile.png" alt="Merap Group - Tet Hieu Nghia 2020 - Hotline" />
     </a>
 
 
@@ -314,20 +314,24 @@
         </section>
 
         <section class="quiz" id="quiz-section">
-            <div class="chat__holder--result" id="quiz-result">
-                <img class="chat__icon" src="./images/chat-icon.png" alt="Vi ban xung dang 2020" />
-                <p class="chat__content" id='quiz-result-content'>
+            <div class="chat__wrapper">
+                <div class="chat__holder--result" id="quiz-result">
+                    <img class="chat__icon" src="./images/chat-icon.png" alt="Vi ban xung dang 2020" />
+                    <p class="chat__content" id='quiz-result-content'>
 
-                </p>
+                    </p>
+                </div>
             </div>
+
+
 
             <div class="quiz__content" id="quiz-content">
                 <div class="chat__wrapper">
-                    <div class="chat__holder">
+                    <div class="chat__holder" id="chat_hello">
                         <img class="chat__icon" src="./images/chat-icon.png" alt="Vi ban xung dang 2020" />
                         <p class="chat__content" id="quiz-welcome">
-                            Hi <span id="quiz-welcome-name"></span>. Bạn đã sẵn sàng chưa? Đây là câu hỏi số <span
-                                id="quiz-welcome-number"></span> dành cho bạn.
+                            Chào <span id="quiz-welcome-name"></span>. Bạn đã sẵn sàng Đáp Thông Minh cho những câu Hỏi
+                            Linh Tinh chưa?
                         </p>
                     </div>
                     <div class="chat__holder">
@@ -430,12 +434,12 @@
                     <input type="text" class="field__input" id="work-address" required>
                 </div>
 
-                <p class="block note note--address">MERAPGroup sẽ sử dụng địa chỉ nhà thuốc đã cung cấp để trao giải
-                    thưởng. Thông tin của bạn sẽ được bảo mật và chỉ được sử dụng trong khuôn khổ của chương trình</p>
+                <p class="block note note--address">MERAPGroup chỉ sử dụng địa chỉ nhà thuốc đã cung cấp để trao giải
+                    thưởng. Thông tin của bạn sẽ được bảo mật và chỉ sử dụng trong khuôn khổ của chương trình.
+                </p>
                 <div class="block agreement">
                     <input type="checkbox" required id="agreement-checkbox">
-                    <label for="agreement-checkbox">Tôi đã đọc và đồng ý với thể lệ cuộc thi và điểu khoản bảo mật của
-                        chương trình</label>
+                    <label for="agreement-checkbox">Tôi đã đọc và đồng ý với THỂ LỆ của chương trình.</label>
                 </div>
                 <p class="error__message" id="profile-error">This is a sample error</p>
                 <button class="submit__button green__button submit__button--register" id="profile-button">
@@ -469,11 +473,11 @@
     <script src="js/libs/jquery.mousewheel.min.js"></script>
     <script src="js/libs/TweenMax.min.js"></script>
     <script src="js/minify/DropdownBox.min.js"></script>
-    <script src="js/minify/common.min.js"></script>
-    <script src="js/minify/functions.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/functions.js"></script>
     <script src="js/minify/teaser.min.js"></script>
     <script src="js/minify/registration-part1.min.js"></script>
-    <script src="js/minify/game.min.js?v=2.0"></script>
+    <script src="js/game.js"></script>
     <script src="js/minify/registration-part2.min.js"></script>
 </body>
 

@@ -54,6 +54,7 @@ $(function () {
         profileSection = $("#registration-profile"),
         quizSection = $("#quiz-section"),
         chatArray = $(".chat__holder"),
+        chatHello = $("#chat_hello"),
         quizWelcomeName = $("#quiz-welcome-name"),
         quizWelcomeNumber = $("#quiz-welcome-number"),
         quizQuestion = $("#quiz-ques"),
@@ -79,6 +80,8 @@ $(function () {
         gameErrorTime,
         gameError = $('#answer-error'),
         quizResult = $('#quiz-result'),
+        quizResultThankyou1 = $('#quiz-result-thankyou-1'),
+        quizResultThankyou2 = $('#quiz-result-thankyou-2'),
         quizResultContent = $('#quiz-result-content'),
         showResultTimeout,
         init = function () {
@@ -97,6 +100,11 @@ $(function () {
                 answerDataToSend = {
                     text: {}
                 }
+
+                quizArray[0].question ='Câu hỏi 1: ' + quizArray[0].question;
+                quizArray[1].question ='Câu hỏi 2: ' + quizArray[1].question;
+                quizArray[2].question ='Câu hỏi 3: ' + quizArray[2].question;
+                console.log(quizArray);
                 generateQuiz();
             });
         },
@@ -154,7 +162,7 @@ $(function () {
                     delay: delayTime
                 });
                 TweenMax.from(chat, 0.5, {
-                    y: 50,
+                    y: 0,
                     ease: Quint.easeOut,
                     delay: delayTime
                 })
@@ -170,6 +178,11 @@ $(function () {
             if (currentQuiz >= maxQuiz) {
                 saveUserAnswer();
             } else {
+                if (currentQuiz == 0) {
+                    chatHello.css('display', 'block')
+                } else {
+                    chatHello.css('display', 'none')
+                }
                 const username = window.localStorage.getItem('username');
                 const current = quizArray[currentQuiz]
                 quizWelcomeName.text(username)
@@ -224,7 +237,7 @@ $(function () {
                     } else {
                         showCongrateSection();
                     }
-                }, 3000);
+                }, 15000);
             }
         },
         onSaveGameError = function (e) {
@@ -244,17 +257,29 @@ $(function () {
             })
             const userResult = correctAnswer + '/' + maxQuiz
             let text = '';
+            let remain_play_time = quizData.length / 3;
             if (correctAnswer <= 2) {
-                text = 'Rất tiếc ' + username + ', bạn chỉ đúng được ' + userResult + ' câu. Cố gắng ở những lượt chơi tiếp theo bạn nhé!'
+                text = 'Bạn đã trả lời đúng ' + userResult + ' câu hỏi. Bạn còn ' + ( remain_play_time ) + '/3 lượt chơi.';
             }
             if (correctAnswer === maxQuiz) {
-                text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả 3 câu.'
+                text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả 3 câu. Bạn còn ' + ( remain_play_time ) + '/3 lượt chơi.'
             }
             quizResultContent.text(text)
             TweenMax.to(quizResult, 0.3, {
                 autoAlpha: 1,
                 ease: Sine.easeOut
             });
+            TweenMax.to(quizResultThankyou1, 0.3, {
+                autoAlpha: 1,
+                ease: Sine.easeOut
+            });
+            TweenMax.to(quizResultThankyou2, 0.3, {
+                autoAlpha: 1,
+                ease: Sine.easeOut
+            });
+
+
+
         },
         hideQuizSection = function () {
             quizSection.css({

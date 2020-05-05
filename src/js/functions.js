@@ -33,7 +33,15 @@ $(function () {
             const currentPos = $(window).scrollTop()
             TweenMax.killTweensOf(hotline)
             TweenMax.killTweensOf(playnowBtn)
-            if ($(window).width() < 1000 && currentPos > quizSectionPos) {
+            // if ($(window).width() < 1000 && currentPos > quizSectionPos) {
+            //     TweenMax.to(hotline, .3 , {autoAlpha: 0, ease: Sine.easeOut})
+            //     TweenMax.to(playnowBtn, .3 , {autoAlpha: 0, ease: Sine.easeOut})
+            // } else {
+            //     TweenMax.to(hotline, .3 , {autoAlpha: 1, ease: Sine.easeOut})
+            //     TweenMax.to(playnowBtn, .3 , {autoAlpha: 1, ease: Sine.easeOut})
+            // }
+
+            if ( currentPos > quizSectionPos) {
                 TweenMax.to(hotline, .3 , {autoAlpha: 0, ease: Sine.easeOut})
                 TweenMax.to(playnowBtn, .3 , {autoAlpha: 0, ease: Sine.easeOut})
             } else {
