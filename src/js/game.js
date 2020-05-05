@@ -32,7 +32,7 @@ $(function () {
                 correct: 'B',
             },
             {
-                question: 'Hoạt chất Chlorhexidin trong thuốc súc miệng họng Medoral MERAPGroup có tác dụng gì?',
+                question: 'Hoạt chất Chlorhexidin trong thuốc súc miệng họng Medoral của MERAPGroup có tác dụng gì?',
                 answer: ['A. Diệt vi rút, vi khuẩn, nấm', 'B. Trị đau bao tử', 'C. Làm trắng và chắc răng'],
                 correct: 'A',
             },
@@ -54,7 +54,6 @@ $(function () {
         profileSection = $("#registration-profile"),
         quizSection = $("#quiz-section"),
         chatArray = $(".chat__holder"),
-        feedbackArray = $(".result-feedback"),
         chatHello = $("#chat_hello"),
         quizWelcomeName = $("#quiz-welcome-name"),
         quizWelcomeNumber = $("#quiz-welcome-number"),
@@ -76,8 +75,8 @@ $(function () {
             text: {}
         },
         congrateHolder = $("#congrate-holder"),
-        chatDelay = 1,
-        chatDelayFraction = 0.7,
+        chatDelay = 0,
+        chatDelayFraction = 1,
         gameErrorTime,
         gameError = $('#answer-error'),
         quizResult = $('#quiz-result'),
@@ -85,11 +84,13 @@ $(function () {
         quizResultThankyou2 = $('#quiz-result-thankyou-2'),
         quizResultContent = $('#quiz-result-content'),
         quizResultFeedback = $('#quiz-result-feedback'),
+        quizContent = $('#quiz-content'),
         showResultTimeout,
         init = function () {
             quizAnswer = [quizA, quizB, quizC];
             setup();
             window.addEventListener(MerapCustomEvent.START_GAME, () => {
+
                 currentQuiz = 0;
                 const randomStartID = Math.round(Math.random() * (quizData.length - maxQuiz))
                 if (Math.random() > 0.5) {
@@ -137,7 +138,7 @@ $(function () {
             TweenMax.to(resHolder, 0.5, {
                 autoAlpha: 0,
                 ease: Sine.easeOut,
-                delay: totalDelay,
+                delay: 0.5,
                 onComplete: () => {
                     TweenMax.killTweensOf(answerHolder)
                     TweenMax.to(answerHolder, 0.2, {
@@ -155,8 +156,8 @@ $(function () {
         showAllChat = function () {
             for (let i = 0; i < chatArray.length; i++) {
                 const chat = chatArray[i]
-                const delayTime = chatDelay + i / chatDelayFraction
-                TweenMax.killTweensOf(chat);
+                const delayTime = chatDelay + i / 1.5
+                console.log(delayTime)
                 TweenMax.to(chat, 0.5, {
                     autoAlpha: 1,
                     ease: Sine.easeOut,
@@ -165,7 +166,6 @@ $(function () {
                 TweenMax.from(chat, 0.5, {
                     y: 0,
                     ease: Quint.easeOut,
-                    delay: delayTime
                 })
             }
             TweenMax.killTweensOf(answerHolder)
@@ -176,9 +176,14 @@ $(function () {
             })
         },
         generateQuiz = function () {
+
+
             if (currentQuiz >= maxQuiz) {
                 saveUserAnswer();
             } else {
+                quizContent.css('display','block')
+                console.log('this is running')
+
                 if (currentQuiz == 0) {
                     chatHello.css('display', 'block')
                 } else {
@@ -245,9 +250,6 @@ $(function () {
             // show response error here
         },
         showUserResult = function () {
-            quizSection.css({
-                height: 700
-            });
             const username = window.localStorage.getItem('username');
             let correctAnswer = 0;
             const finalAnswer = answerDataToSend.text;
@@ -266,6 +268,7 @@ $(function () {
                 text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả 3 câu. Bạn còn ' + ( gameLeft ) + '/3 lượt chơi.'
             }
             quizResultContent.text(text)
+            quizContent.css('display','none')
             TweenMax.to(quizResultFeedback, 0.3, {
                 autoAlpha: 1,
                 ease: Sine.easeOut,
