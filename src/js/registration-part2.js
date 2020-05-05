@@ -58,6 +58,7 @@ $(function () {
     profileContent = $("#profile-content"),
     congrateHolder = $("#congrate-holder"),
     congrateButton = $("#congrate-button"),
+    congrateTitle = $("#congrate-title"),
     congrateMessage = $("#congrate-message"),
     quizSection = $("#quiz-section"),
     congrateMessageId,
@@ -260,10 +261,12 @@ $(function () {
     showCongrateMessage = function () {
         TweenMax.killTweensOf(congrateMessage)
         TweenMax.to(congrateMessage, 0.3, {autoAlpha: 1, ease: Sine.easeOut});
-        congrateMessage.text('Bạn đã chơi hết lượt, vui lòng quay lại vào tuần sau');
+        $('#congrate-button-text').text('OK')
+        congrateTitle.text('Bạn đã hết lượt chơi.')
+        congrateMessage.text('Hẹn gặp bạn ở chương trình sau!');
+
 
         clearTimeout(congrateMessageId);
-        congrateMessageId = setTimeout(hideCongrateMessage, 3000);
     },
     hideCongrateMessage = function () {
         TweenMax.killTweensOf(congrateMessage)

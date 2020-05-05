@@ -54,6 +54,7 @@ $(function () {
         profileSection = $("#registration-profile"),
         quizSection = $("#quiz-section"),
         chatArray = $(".chat__holder"),
+        feedbackArray = $(".result-feedback"),
         chatHello = $("#chat_hello"),
         quizWelcomeName = $("#quiz-welcome-name"),
         quizWelcomeNumber = $("#quiz-welcome-number"),
@@ -83,6 +84,7 @@ $(function () {
         quizResultThankyou1 = $('#quiz-result-thankyou-1'),
         quizResultThankyou2 = $('#quiz-result-thankyou-2'),
         quizResultContent = $('#quiz-result-content'),
+        quizResultFeedback = $('#quiz-result-feedback'),
         showResultTimeout,
         init = function () {
             quizAnswer = [quizA, quizB, quizC];
@@ -245,7 +247,7 @@ $(function () {
         },
         showUserResult = function () {
             quizSection.css({
-                height: 300
+                height: 700
             });
             const username = window.localStorage.getItem('username');
             let correctAnswer = 0;
@@ -257,28 +259,34 @@ $(function () {
             })
             const userResult = correctAnswer + '/' + maxQuiz
             let text = '';
-            let remain_play_time = quizData.length / 3;
+            const gameLeft = Number(window.localStorage.getItem('gameLeft'));
             if (correctAnswer <= 2) {
-                text = 'Bạn đã trả lời đúng ' + userResult + ' câu hỏi. Bạn còn ' + ( remain_play_time ) + '/3 lượt chơi.';
+                text = 'Bạn đã trả lời đúng ' + userResult + ' câu hỏi. Bạn còn ' + ( gameLeft ) + '/3 lượt chơi.';
             }
             if (correctAnswer === maxQuiz) {
-                text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả 3 câu. Bạn còn ' + ( remain_play_time ) + '/3 lượt chơi.'
+                text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả 3 câu. Bạn còn ' + ( gameLeft ) + '/3 lượt chơi.'
             }
             quizResultContent.text(text)
+            TweenMax.to(quizResultFeedback, 0.3, {
+                autoAlpha: 1,
+                ease: Sine.easeOut,
+                display:'block'
+            });
             TweenMax.to(quizResult, 0.3, {
                 autoAlpha: 1,
-                ease: Sine.easeOut
+                ease: Sine.easeOut,
+
             });
             TweenMax.to(quizResultThankyou1, 0.3, {
                 autoAlpha: 1,
-                ease: Sine.easeOut
+                ease: Sine.easeOut,
+                delay: 1
             });
             TweenMax.to(quizResultThankyou2, 0.3, {
                 autoAlpha: 1,
-                ease: Sine.easeOut
+                ease: Sine.easeOut,
+                delay: 4
             });
-
-
 
         },
         hideQuizSection = function () {

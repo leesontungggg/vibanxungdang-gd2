@@ -3567,9 +3567,14 @@ b {
   vertical-align: bottom;
 }
 
-.chat__holder--result {
+#quiz-result-feedback {
   opacity: 0;
   visibility: hidden;
+  display: none;
+  margin-top: 20%;
+}
+
+.chat__holder--result {
   width: 80%;
   height: auto;
   display: block;
@@ -3803,5 +3808,25 @@ b {
 @media screen and (max-width: 420px) {
   .congrate__text {
     font-size: 24px;
+  }
+}
+
+.congrate__message {
+  text-align: center;
+  font-family: TitleBold;
+  font-size: 28px;
+  color: #00a64f;
+  line-height: 1.11111em;
+}
+
+@media screen and (max-width: 720px) {
+  .congrate__message {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .congrate__message {
+    font-size: 16px;
   }
 }

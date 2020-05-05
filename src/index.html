@@ -314,11 +314,28 @@
         </section>
 
         <section class="quiz" id="quiz-section">
-            <div class="chat__wrapper">
-                <div class="chat__holder--result" id="quiz-result">
+            <div class="chat__wrapper" id="quiz-result-feedback">
+                <div class="chat__holder" id="quiz-result" class="result-feedback">
                     <img class="chat__icon" src="./images/chat-icon.png" alt="Vi ban xung dang 2020" />
                     <p class="chat__content" id='quiz-result-content'>
 
+                    </p>
+                </div>
+
+                <div class="chat__holder" id="quiz-result-thankyou-1" class="result-feedback">
+                    <img class="chat__icon" src="./images/chat-icon.png" alt="Vi ban xung dang 2020" />
+                    <p class="chat__content">
+                        Số Chứng Minh Nhân Dân của bạn sẽ là con số may mắn để tham gia chương trình quay số trúng
+                        thưởng. Kết quả cuối cùng sẽ được công bố vào 21/05/2020 tại website Vì Bạn Xứng Đáng và
+                        Facebook fanpage Hội Nhà Thuốc, Quầy Thuốc Việt Nam. Thật nhiều phần quà đặc biệt đang đợi, bạn
+                        nhớ theo dõi để là người biết kết quả sớm nhất nha.
+                    </p>
+                </div>
+
+                <div class="chat__holder" id="quiz-result-thankyou-2" class="result-feedback">
+                    <img class="chat__icon" src="./images/chat-icon.png" alt="Vi ban xung dang 2020" />
+                    <p class="chat__content">
+                        Chúc bạn một ngày thật vui và nhiều năng lượng!
                     </p>
                 </div>
             </div>
@@ -450,13 +467,13 @@
 
         <section class="congrate" id="congrate-holder">
             <article class="congrate__content">
-                <p class="congrate__text">
+                <p class="congrate__text" id="congrate-title">
                     Thông tin của bạn đã được lưu, cảm ơn bạn đã tham gia chương trình.
                 </p>
                 <p class="congrate__message" id="congrate-message">
                 </p>
                 <button class="submit__button green__button submit__button--register" id="congrate-button">
-                    <p class="core">CHƠI LẠI</p>
+                    <p class="core" id="congrate-button-text">CHƠI LẠI</p>
                 </button>
             </article>
         </section>
@@ -473,11 +490,11 @@
     <script src="js/libs/jquery.mousewheel.min.js"></script>
     <script src="js/libs/TweenMax.min.js"></script>
     <script src="js/minify/DropdownBox.min.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/functions.js"></script>
+    <script src="js/minify/common.min.js"></script>
+    <script src="js/minify/functions.min.js"></script>
     <script src="js/minify/teaser.min.js"></script>
     <script src="js/minify/registration-part1.min.js"></script>
-    <script src="js/game.js"></script>
+    <script src="js/minify/game.min.js"></script>
     <script src="js/minify/registration-part2.min.js"></script>
 </body>
 
