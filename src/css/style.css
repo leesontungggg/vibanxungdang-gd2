@@ -2132,7 +2132,13 @@ b {
 
 @media screen and (max-width: 420px) {
   .profile__guide--text {
-    font-size: 24px;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .profile__guide--text {
+    font-size: 18px;
   }
 }
 
@@ -3409,6 +3415,15 @@ b {
   overflow: hidden;
 }
 
+@media screen and (max-width: 375px) {
+  .tnc__section .content__text {
+    padding-left: 1.375em;
+    padding-right: 1.375em;
+  }
+}
+
+
+
 .tnc__section .content__text a {
   display: inline-block;
   cursor: pointer;
@@ -3475,7 +3490,7 @@ b {
   font-family: Arial;
   font-size: 1em;
   color: #757575;
-  line-height: 1.5625em;
+  line-height: 1.45em;
 }
 
 .overall__text {
