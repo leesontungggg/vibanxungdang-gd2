@@ -192,14 +192,15 @@ $(function () {
         }
 
         Object.keys(inputFields).forEach((key) => {
-            const value = $('#' + inputFields[key]).val()
+        const value = $('#' + inputFields[key]).val()
             profileData[key] = value;
         })
 
         console.log(profileData)
     },
     doValidate = function () {
-        const noneRequiredKey = ['email']
+        // const noneRequiredKey = ['email']
+        const noneRequiredKey = [];
 
         for (let i = 0; i<keyData.length; i++) {
             const key = keyData[i]
