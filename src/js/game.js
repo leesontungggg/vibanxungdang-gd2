@@ -248,7 +248,7 @@ $(function () {
                     } else {
                         showCongrateSection();
                     }
-                }, 5000);
+                }, 10000);
             }
         },
         onSaveGameError = function (e) {
@@ -272,6 +272,7 @@ $(function () {
             if (correctAnswer === maxQuiz) {
                 text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả 3 câu. Bạn còn ' + ( gameLeft ) + '/3 lượt chơi.'
             }
+            window.scrollTo(0,document.body.scrollHeight)
             quizResultContent.empty()
             quizResultContent.append(text)
             quizContent.css('display','none')

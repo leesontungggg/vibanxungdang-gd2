@@ -1055,6 +1055,10 @@ b {
   width: 100%;
 }
 
+#navbar-game-button {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1000px) {
   .nav__item--image {
     display: block;
@@ -2584,7 +2588,7 @@ b {
 @media screen and (max-width: 520px) {
   .form__section {
     padding: 4px 0px;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -2622,11 +2626,11 @@ b {
 .agreement input+label {
   position: relative;
   font-family: Arial;
-  font-size: 1em;
+  font-size: 11px;
   color: #757575;
   line-height: 1.25em;
   font-weight: bold;
-  padding: 4px 4px 4px 34px;
+  padding: 6px 4px 4px 34px;
   display: block;
   cursor: pointer;
   -webkit-transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
