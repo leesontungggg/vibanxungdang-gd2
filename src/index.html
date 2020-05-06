@@ -34,7 +34,7 @@
 
     <nav class="nav">
         <div class="nav__holder">
-            <div class="logo">
+            <div class="logo" id="navbar-logo">
                 <img class="logo__image" src="images/merap-logo@2x.png" alt="Marap Group Logo">
             </div>
 
@@ -58,8 +58,8 @@
                         VIDEO
                     </a>
                 </li>
-                <li class="nav__item">
-                    <a class="black--menu" href="#quiz-section">
+                <li class="nav__item" id="navbar-game-button">
+                    <a class="black--menu">
                         GAME
                     </a>
                 </li>
@@ -99,7 +99,7 @@
                 </li>
                 <li class="nav__item nav__hotline">
                     <p>
-                        039 245 8993
+                        0368 024 908
                     </p>
                     <img class="hotline__image" src="images/hotline@3x.png" alt="Merap Vi Ban Xung Dang - Hotline">
                 </li>
@@ -326,7 +326,8 @@
                     <img class="chat__icon" src="./images/chat-icon.png" alt="Vi ban xung dang 2020" />
                     <p class="chat__content">
                         <strong>Số Chứng Minh Nhân Dân</strong> của bạn sẽ là con số may mắn để tham gia chương trình quay số trúng
-                        thưởng. Kết quả cuối cùng sẽ được công bố vào 21/05/2020 tại website Vì Bạn Xứng Đáng và
+                        thưởng. <br>
+                        <br>Kết quả cuối cùng sẽ được công bố vào 21/05/2020 tại website Vì Bạn Xứng Đáng và
                         Facebook fanpage Hội Nhà Thuốc, Quầy Thuốc Việt Nam. Thật nhiều phần quà đặc biệt đang đợi, bạn
                         nhớ theo dõi để là người biết kết quả sớm nhất nha.
                     </p>
@@ -411,19 +412,19 @@
             </article>
             <article class="register" id="profile-content">
                 <div class="inline__block cmnd">
-                    <p class="field__label">SỐ CMND<span class="asterisk">*</span></p>
+                    <p class="field__label">SỐ CMND (QUAY SỐ MAY MẮN)<span class="asterisk">*</span></p>
                     <input type="number" class="field__input" id="passport" required>
                 </div>
                 <div class="inline__block nickfb">
-                    <p class="field__label">NICK FACEBOOK<span class="asterisk">*</span></p>
+                    <p class="field__label">NICK FACEBOOK (LIÊN HỆ TRAO GIẢI)<span class="asterisk">*</span></p>
                     <input type="text" class="field__input" id="nick-facebook" required>
                 </div>
                 <div class="inline__block email">
-                    <p class="field__label">EMAIL<span class="asterisk">*</span></p>
+                    <p class="field__label">EMAIL (LIÊN HỆ TRAO GIẢI)<span class="asterisk">*</span></p>
                     <input type="email" class="field__input" id="email">
                 </div>
 
-                <p class="block form__section form__section--work">Địa chỉ nhà thuốc đang công tác<span
+                <p class="block form__section form__section--work">ĐỊA CHỈ NHÀ THUỐC ĐANG CÔNG TÁC (GỬI QUÀ)<span
                         class="asterisk">*</span></p>
                 <div class="inline__block work__city">
                     <p class="field__label">TỈNH/THÀNH PHỐ<span class="asterisk">*</span></p>
@@ -477,7 +478,6 @@
                 </button>
             </article>
         </section>
-
         <div class="spacer" style="height:20px;background-color:transparent;opacity: 0px;display: block;"></div>
         <footer>
             © 2018 MERAPGroup. All Rights Reserved

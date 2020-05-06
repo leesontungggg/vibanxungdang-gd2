@@ -195,9 +195,10 @@ $(function () {
                 }
                 const username = window.localStorage.getItem('username');
                 const current = quizArray[currentQuiz]
+                quizQuestion.empty();
                 quizWelcomeName.text(username)
                 quizWelcomeNumber.text(currentQuiz + 1)
-                quizQuestion.text(current.question);
+                quizQuestion.append('<strong>' + current.question + '</strong>');
                 quizAnswer.forEach((answer, index) => {
                     answer.text(current.answer[index]);
                 })
@@ -247,7 +248,7 @@ $(function () {
                     } else {
                         showCongrateSection();
                     }
-                }, 15000);
+                }, 5000);
             }
         },
         onSaveGameError = function (e) {
@@ -296,7 +297,7 @@ $(function () {
             TweenMax.to(quizResultThankyou2, 0.3, {
                 autoAlpha: 1,
                 ease: Sine.easeOut,
-                delay: 4
+                delay: 2
             });
 
         },

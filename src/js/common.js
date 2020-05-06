@@ -47,7 +47,7 @@ $(function () {
         prizeArray = [],
         tncImage = $(".tnc__image"),
         pageInit = function () {
-            addHoverButton();
+            addOnClickButtons();
             pageSetup();
             calculateImage();
             addSubmitEnterListener();
@@ -416,13 +416,21 @@ $(function () {
                 }
             });
         },
-        addHoverButton = function () {
-            var click = document.getElementById("playnow-hover-button");
-            click.addEventListener('click', function () {
+        addOnClickButtons = function () {
+            var playnow_hover = document.getElementById("playnow-hover-button");
+            playnow_hover.addEventListener('click', function () {
                 window.scrollTo(0,document.body.scrollHeight + 600)
             }, false);
 
+            var navbar_game_btn = document.getElementById("navbar-game-button");
+            navbar_game_btn.addEventListener('click', function () {
+                window.scrollTo(0,document.body.scrollHeight + 600)
+            }, false);
 
+            var navbar_logo = document.getElementById("navbar-logo");
+            navbar_logo.addEventListener('click', function () {
+                window.scrollTo(0,0)
+            }, false);
         };
 
 

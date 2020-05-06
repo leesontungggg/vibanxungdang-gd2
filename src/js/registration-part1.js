@@ -10,7 +10,7 @@ $(function () {
                 name: "123 Studio",
                 game: true,
                 game_left: 1,
-                profile: true
+                profile: false
             },
             token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFkYzMxNmFiNzNhZmZlMWM1OTZiZWQ2MGMxMjU0ODZmOGFkOWM3ODg5ZGJkMzA3NjM2OGIxZjVhZmY2YjBjNjUyMzA1YjA4YmM1ZGY2YTM1In0.eyJhdWQiOiIxIiwianRpIjoiYWRjMzE2YWI3M2FmZmUxYzU5NmJlZDYwYzEyNTQ4NmY4YWQ5Yzc4ODlkYmQzMDc2MzY4YjFmNWFmZjZiMGM2NTIzMDViMDhiYzVkZjZhMzUiLCJpYXQiOjE1NDU0Nzc2MjYsIm5iZiI6MTU0NTQ3NzYyNiwiZXhwIjoxNTc3MDEzNjI2LCJzdWIiOiIyNiIsInNjb3BlcyI6W119.SHJ-gn-JqKYKKT3YntpWV_CyilU5Jy2K0CR13245AORIFbz21wz84I6arpDX_qDfOqGuoSthxJfoIPh_Xc-eMq7TsTtzQ871U4c0WgxrNLZfL_bZfdgD5zh_700mzSqbts-o7CWvNqm4vq3HiyqYSexGvkMEDlCZradAmo2jf9DZ6MDSyvyMZ0hF4ISJm5Gan0RiUFJx_TK4BslUgLCM8J7dbhwl6WKpiGQCtIio4qj_AbHxuwYwQP7MRilbS9cSG-qPG2oz8mK50yPInxvuD3yEUFrSPkb4lq8PrsRaRGbVtSp1qk9fLCoAoJWPugzKcLhyxIomI8Wy_nxiu6ETdeXhYmT07SYdNArL6QeinESJA1GM6QOQiCyecuvKrZBVskj0hSWrP1mrCIcEq4m2qnxy-9yRAsZ5k4IpBREyj_9lIR4PZs0MNZV9Qtum37tsGWPtQjs_LQZGYcyy8PSYB5J0gSmpawgj9O4w1VQZPHNdfvyT0kHN2PJQmY53XGVo9LeKNEAZON2VG25RClHocdzPOHABm8Hl75o7-LIEkk5aTy76tRdzza5XwsHjqyb75Xs6q_SL_BNg8Ag9gKekmL3607D7BJqZ9AmffMKeuPWr3OcwqHSxCUrg5SmfRTnl_kI2wsSfsPXq8YIAWV1iYR76IIHdCvEghANjBpDSzHo"
         },
@@ -19,7 +19,7 @@ $(function () {
                 name: "123 Studio"
             },
             game_left: 0,
-            profile: true,
+            profile: false,
             token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFkYzMxNmFiNzNhZmZlMWM1OTZiZWQ2MGMxMjU0ODZmOGFkOWM3ODg5ZGJkMzA3NjM2OGIxZjVhZmY2YjBjNjUyMzA1YjA4YmM1ZGY2YTM1In0.eyJhdWQiOiIxIiwianRpIjoiYWRjMzE2YWI3M2FmZmUxYzU5NmJlZDYwYzEyNTQ4NmY4YWQ5Yzc4ODlkYmQzMDc2MzY4YjFmNWFmZjZiMGM2NTIzMDViMDhiYzVkZjZhMzUiLCJpYXQiOjE1NDU0Nzc2MjYsIm5iZiI6MTU0NTQ3NzYyNiwiZXhwIjoxNTc3MDEzNjI2LCJzdWIiOiIyNiIsInNjb3BlcyI6W119.SHJ-gn-JqKYKKT3YntpWV_CyilU5Jy2K0CR13245AORIFbz21wz84I6arpDX_qDfOqGuoSthxJfoIPh_Xc-eMq7TsTtzQ871U4c0WgxrNLZfL_bZfdgD5zh_700mzSqbts-o7CWvNqm4vq3HiyqYSexGvkMEDlCZradAmo2jf9DZ6MDSyvyMZ0hF4ISJm5Gan0RiUFJx_TK4BslUgLCM8J7dbhwl6WKpiGQCtIio4qj_AbHxuwYwQP7MRilbS9cSG-qPG2oz8mK50yPInxvuD3yEUFrSPkb4lq8PrsRaRGbVtSp1qk9fLCoAoJWPugzKcLhyxIomI8Wy_nxiu6ETdeXhYmT07SYdNArL6QeinESJA1GM6QOQiCyecuvKrZBVskj0hSWrP1mrCIcEq4m2qnxy-9yRAsZ5k4IpBREyj_9lIR4PZs0MNZV9Qtum37tsGWPtQjs_LQZGYcyy8PSYB5J0gSmpawgj9O4w1VQZPHNdfvyT0kHN2PJQmY53XGVo9LeKNEAZON2VG25RClHocdzPOHABm8Hl75o7-LIEkk5aTy76tRdzza5XwsHjqyb75Xs6q_SL_BNg8Ag9gKekmL3607D7BJqZ9AmffMKeuPWr3OcwqHSxCUrg5SmfRTnl_kI2wsSfsPXq8YIAWV1iYR76IIHdCvEghANjBpDSzHo"
         },
         tabButtons = $(".tab__button"),
