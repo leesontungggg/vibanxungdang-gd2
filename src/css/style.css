@@ -1926,6 +1926,7 @@ b {
   background-color: white;
   position: relative;
   padding: 15px 6.25em;
+  box-shadow: 0px 0px 15px #888888;
 }
 
 .registration.deactive:not(.profile) {
@@ -1963,9 +1964,6 @@ b {
 @media screen and (max-width: 420px) {
   .profile {
     min-height: 250px;
-  }
-  .profile {
-    padding-top: 20%;
   }
 }
 
@@ -3418,6 +3416,7 @@ b {
   overflow: hidden;
 }
 
+
 @media screen and (max-width: 375px) {
   .tnc__section .content__text {
     padding-left: 1.375em;
@@ -3426,6 +3425,15 @@ b {
 }
 
 
+#rules-award-jump {
+  display: none;
+}
+
+@media screen and (max-width: 520px) {
+#rules-award-jump {
+    display: inline;
+  }
+}
 
 .tnc__section .content__text a {
   display: inline-block;
@@ -3789,6 +3797,7 @@ b {
   background-color: white;
   position: relative;
   padding: 15px 6.25em;
+  box-shadow: 0px 0px 15px #888888;
 }
 
 @media screen and (max-width: 1000px) {

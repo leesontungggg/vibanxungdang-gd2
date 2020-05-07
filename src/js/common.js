@@ -407,14 +407,22 @@ $(function () {
                 }
             });
 
-            var answer_input = document.getElementById("answer-input");
+            // var answer_input = document.getElementById("answer-input");
 
-            answer_input.addEventListener("keyup", function (event) {
-                if (event.keyCode === 13) {
+            // answer_input.addEventListener("keyup", function (event) {
+            //     if (event.keyCode === 13) {
+            //         event.preventDefault();
+            //         console.log('is clicked')
+            //         document.getElementById("quiz-button").click();
+            //     }
+            // });
+            $( "#answer-input" ).unbind();
+            $( "#answer-input" ).keyup(function(event) {
+                if (event.which === 13) {
                     event.preventDefault();
                     document.getElementById("quiz-button").click();
                 }
-            });
+              });
         },
         addOnClickButtons = function () {
             var playnow_hover = document.getElementById("playnow-hover-button");
