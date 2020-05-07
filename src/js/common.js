@@ -29,6 +29,13 @@ const MerapCustomEvent = {
 const StartGameEvent = new CustomEvent(MerapCustomEvent.START_GAME);
 const EndGameEvent = new CustomEvent(MerapCustomEvent.END_GAME);
 
+var block = {
+    'ch1': {
+        'key':'Enter',
+        'keycode':'13'
+    },
+  }
+
 $(function () {
 
     var loader = $(".loader"),
@@ -391,7 +398,7 @@ $(function () {
         addSubmitEnterListener = function () {
             var phone_input = document.getElementById("phone");
 
-            phone_input.addEventListener("keyup", function (event) {
+            phone_input.addEventListener("keypress", function (event) {
                 if (event.keyCode === 13) {
                     event.preventDefault();
                     document.getElementById("register-button").click();
@@ -400,44 +407,36 @@ $(function () {
 
             var refcode_input = document.getElementById("ref_code");
 
-            refcode_input.addEventListener("keyup", function (event) {
+            refcode_input.addEventListener("keypress", function (event) {
                 if (event.keyCode === 13) {
                     event.preventDefault();
                     document.getElementById("register-button").click();
                 }
             });
 
-            // var answer_input = document.getElementById("answer-input");
+            var answer_input = document.getElementById("answer-input");
 
-            // answer_input.addEventListener("keyup", function (event) {
-            //     if (event.keyCode === 13) {
-            //         event.preventDefault();
-            //         console.log('is clicked')
-            //         document.getElementById("quiz-button").click();
-            //     }
-            // });
-            $( "#answer-input" ).unbind();
-            $( "#answer-input" ).keyup(function(event) {
-                if (event.which === 13) {
+            answer_input.addEventListener("keypress", function (event) {
+                if (event.keyCode === 13) {
                     event.preventDefault();
                     document.getElementById("quiz-button").click();
                 }
-              });
+            });
         },
         addOnClickButtons = function () {
             var playnow_hover = document.getElementById("playnow-hover-button");
             playnow_hover.addEventListener('click', function () {
-                window.scrollTo(0,document.body.scrollHeight + 600)
+                window.scrollTo(0, document.body.scrollHeight + 600)
             }, false);
 
             var navbar_game_btn = document.getElementById("navbar-game-button");
             navbar_game_btn.addEventListener('click', function () {
-                window.scrollTo(0,document.body.scrollHeight + 600)
+                window.scrollTo(0, document.body.scrollHeight + 600)
             }, false);
 
             var navbar_logo = document.getElementById("navbar-logo");
             navbar_logo.addEventListener('click', function () {
-                window.scrollTo(0,0)
+                window.scrollTo(0, 0)
             }, false);
         };
 
@@ -512,3 +511,4 @@ function isValid(str) {
 function stopVideo() {
     youtubePlayer.stopVideo();
 }
+
