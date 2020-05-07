@@ -522,7 +522,7 @@ $(function () {
                 profileData[key] = value;
             })
 
-            console.log(profileData)
+            getDistData(selectedWorkCityID, getWorkDistSuccess)
         },
         doValidate = function () {
             // const noneRequiredKey = ['email']
@@ -596,7 +596,9 @@ $(function () {
             $('#congrate-button-text').text('OK')
             congrateTitle.text('Bạn đã hết lượt chơi.')
             congrateMessage.text('Hẹn gặp bạn ở chương trình sau!');
-
+            $('#congrate-button-text').on('click', () => {
+                window.scrollTo(0, 0)
+            })
 
             clearTimeout(congrateMessageId);
         },

@@ -287,6 +287,11 @@ $(function () {
             })
         },
         showProfileSection = function () {
+            var x = $("#registration-profile").position() - 100;
+            window.scrollTo({
+                top: x.top - 100,
+                behavior: 'smooth'
+            });
             profileSection.css({
                 display: 'block',
                 position: 'relative',

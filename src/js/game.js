@@ -272,7 +272,11 @@ $(function () {
             if (correctAnswer === maxQuiz) {
                 text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả 3 câu. Bạn còn ' + ( gameLeft ) + '/3 lượt chơi.'
             }
-            window.scrollTo(0,document.body.scrollHeight)
+            var x = $("#quiz-section").position();
+            window.scrollTo({
+                top: x.top,
+                behavior: 'smooth'
+            });
             quizResultContent.empty()
             quizResultContent.append(text)
             quizContent.css('display','none')
