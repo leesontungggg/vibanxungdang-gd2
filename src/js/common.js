@@ -19,7 +19,7 @@ var isChrome = !!window.chrome && !!window.chrome.webstore;
 // Blink engine detection
 var isBlink = (isChrome || isOpera) && !!window.CSS;
 //var baseUrl = 'http://ngodungcan.website/merap/api/public/api/';
-var baseUrl = 'http://vibanxungdang.merapgroup.com.vn/2020/api/public/api/';
+var baseUrl = 'http://vibanxungdang.merapgroup.com.vn/api/public/api/';
 // var isLocal = true;
 var isLocal = window.location.protocol === 'file:' || window.location.protocol === 'localhost:';
 const MerapCustomEvent = {
