@@ -270,7 +270,7 @@ $(function () {
                 text = 'Bạn đã trả lời đúng <strong>' + userResult + '</strong> câu hỏi. Bạn còn <strong>' + ( gameLeft ) + '/3</strong> lượt chơi.';
             }
             if (correctAnswer === maxQuiz) {
-                text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả 3 câu. Bạn còn ' + ( gameLeft ) + '/3 lượt chơi.'
+                text = 'Chúc mừng ' + username + ', bạn trả lời đúng cả <strong>3 câu</strong>. Bạn còn <strong>' + ( gameLeft ) + '/3</strong> lượt chơi.'
             }
             var elmnt = document.getElementById("quiz-section");
             elmnt.scrollIntoView();
