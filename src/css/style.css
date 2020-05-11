@@ -1951,7 +1951,7 @@ b {
 
 @media screen and (max-width: 1000px) {
   .profile {
-    padding-top: 13%;
+    padding-top: 15%;
   }
 }
 
@@ -3427,6 +3427,10 @@ b {
 
 #rules-award-jump {
   display: none;
+}
+
+#red-highlight-text {
+  color: red;
 }
 
 @media screen and (max-width: 520px) {

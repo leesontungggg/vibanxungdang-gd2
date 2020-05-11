@@ -1,5 +1,6 @@
 $(function () {
     let cityDataArray = [],
+        scannedCityArray = [],
         workDistDataArray = [],
         ddItemHeight = 40,
         selectedWorkCityID = 0,
@@ -553,6 +554,15 @@ $(function () {
         },
         onGetCitySuccess = function (response) {
             cityDataArray = response;
+            console.log(cityDataArray)
+            cityDataArray.map((city,index) => {
+                if (city.id != 282) {
+                    scannedCityArray.push(city)
+                }
+            })
+
+            cityDataArray = scannedCityArray;
+
             initCityDD();
         },
         onGetCityError = function (error) {
@@ -641,7 +651,7 @@ $(function () {
             })
             window.dispatchEvent(StartGameEvent);
             const quizSectionPos = $(document).height() - $("#quiz-section").height() - 100
-                $(window).scrollTop(quizSectionPos)
+            $(window).scrollTop(quizSectionPos)
         },
         onWorkCityClick = function (cityValue) {
             selectedWorkCityID = cityDataArray.find((item) => item.name === cityValue).id
