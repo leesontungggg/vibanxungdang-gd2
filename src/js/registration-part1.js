@@ -94,7 +94,6 @@ $(function () {
             initRegistration();
             hideQuizAndProfile();
             //setTimeout(checkLogin, 0)
-            console.log('testing on Logout Click')
             setTimeout(onLogoutClick, 0)
 
         },
