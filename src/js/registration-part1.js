@@ -93,7 +93,7 @@ $(function () {
             window.addEventListener('click', collapseAllDD)
             initRegistration();
             hideQuizAndProfile();
-            //setTimeout(checkLogin, 0)
+            setTimeout(checkLogin, 0)
         },
         hideQuizAndProfile = function () {
             profileSection.css({
@@ -456,7 +456,7 @@ $(function () {
         },
         checkLogin = function () {
             if (window.localStorage.token) {
-                hideRegistration();
+                // hideRegistration();
             }
         },
         onDayChosen = function (value) {
